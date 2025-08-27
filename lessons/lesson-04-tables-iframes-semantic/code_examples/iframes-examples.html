@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Iframes Examples</title>
+    <style>
+        .responsive-iframe {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .security-note {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Iframes (Inline Frames)</h1>
+    
+    <!-- Introduction -->
+    <section id="intro">
+        <h2>What are Iframes?</h2>
+        <p>
+            Iframes allow you to embed another HTML document within the current page. 
+            They're commonly used for embedding maps, videos, social media content, 
+            and third-party widgets.
+        </p>
+        
+        <div class="warning">
+            <strong>⚠️ Important:</strong> Iframes should be used judiciously and with 
+            proper security considerations. They can impact performance and accessibility.
+        </div>
+    </section>
+    
+    <hr>
+    
+    <!-- Basic Iframe -->
+    <section id="basic-iframe">
+        <h2>Basic Iframe Usage</h2>
+        <p>Simple iframe embedding another webpage:</p>
+        
+        <iframe src="https://example.com" 
+                width="600" 
+                height="400" 
+                title="Example.com website embedded in iframe">
+        </iframe>
+        
+        <h3>Code Example:</h3>
+        <pre><code>&lt;iframe src="https://example.com" 
+        width="600" 
+        height="400" 
+        title="Example.com website embedded in iframe"&gt;
+&lt;/iframe&gt;</code></pre>
+    </section>
+    
+    <hr>
+    
+    <!-- YouTube Embed -->
+    <section id="youtube-embed">
+        <h2>YouTube Video Embed</h2>
+        <p>Embedding a YouTube video with responsive design:</p>
+        
+        <div class="responsive-iframe">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        
+        <p><strong>Note:</strong> YouTube provides embed codes with proper attributes for security and functionality.</p>
+    </section>
+    
+    <hr>
+    
+    <!-- Google Maps Embed -->
+    <section id="maps-embed">
+        <h2>Google Maps Embed</h2>
+        <p>Embedding a Google Maps location:</p>
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890123!2d-74.00597!3d40.7127837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMjEuNSJX!5e0!3m2!1sen!2sus!4v1234567890123" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Maps showing New York City location">
+        </iframe>
+    </section>
+    
+    <hr>
+    
+    <!-- Iframe Attributes -->
+    <section id="iframe-attributes">
+        <h2>Important Iframe Attributes</h2>
+        
+        <h3>Essential Attributes</h3>
+        <dl>
+            <dt><code>src</code></dt>
+            <dd>URL of the page to embed</dd>
+            
+            <dt><code>width</code> and <code>height</code></dt>
+            <dd>Dimensions of the iframe (can also be set with CSS)</dd>
+            
+            <dt><code>title</code></dt>
+            <dd>Accessible description of the iframe content (required for accessibility)</dd>
+            
+            <dt><code>frameborder</code></dt>
+            <dd>Whether to display a border (0 = no border, 1 = border)</dd>
+        </dl>
+        
+        <h3>Security Attributes</h3>
+        <dl>
+            <dt><code>sandbox</code></dt>
+            <dd>Applies security restrictions to the iframe content</dd>
+            
+            <dt><code>allow</code></dt>
+            <dd>Specifies which browser features the iframe can access</dd>
+            
+            <dt><code>referrerpolicy</code></dt>
+            <dd>Controls what referrer information is sent</dd>
+        </dl>
+        
+        <h3>Loading Attributes</h3>
+        <dl>
+            <dt><code>loading</code></dt>
+            <dd>"lazy" to defer loading until needed, "eager" to load immediately</dd>
+            
+            <dt><code>allowfullscreen</code></dt>
+            <dd>Allows the iframe to enter fullscreen mode</dd>
+        </dl>
+    </section>
+    
+    <hr>
+    
+    <!-- Security Considerations -->
+    <section id="security">
+        <h2>Security Best Practices</h2>
+        
+        <div class="security-note">
+            <h3>🔒 Security Warning</h3>
+            <p>Iframes can be security risks. Always embed content from trusted sources and use appropriate security attributes.</p>
+        </div>
+        
+        <h3>Sandbox Attribute</h3>
+        <p>The sandbox attribute restricts what the iframe can do:</p>
+        
+        <iframe src="https://example.com" 
+                width="600" 
+                height="300"
+                sandbox="allow-scripts allow-same-origin"
+                title="Sandboxed iframe with restricted permissions">
+        </iframe>
+        
+        <h4>Common Sandbox Values:</h4>
+        <ul>
+            <li><code>allow-scripts</code> - Allow JavaScript execution</li>
+            <li><code>allow-same-origin</code> - Allow same-origin requests</li>
+            <li><code>allow-forms</code> - Allow form submissions</li>
+            <li><code>allow-popups</code> - Allow opening new windows/tabs</li>
+            <li><code>allow-top-navigation</code> - Allow navigation of top-level window</li>
+        </ul>
+        
+        <h3>Content Security Policy (CSP)</h3>
+        <p>Use CSP headers to control which domains can be embedded:</p>
+        <pre><code>frame-src 'self' https://trusted-domain.com https://*.youtube.com;</code></pre>
+    </section>
+    
+    <hr>
+    
+    <!-- Responsive Iframes -->
+    <section id="responsive">
+        <h2>Responsive Iframe Design</h2>
+        
+        <h3>Problem: Fixed Dimensions</h3>
+        <p>Fixed width/height iframes don't work well on mobile devices.</p>
+        
+        <h3>Solution: Aspect Ratio Container</h3>
+        <p>Use CSS to create responsive iframes that maintain aspect ratio:</p>
+        
+        <div class="responsive-iframe">
+            <iframe src="https://example.com" 
+                    title="Responsive iframe example">
+            </iframe>
+        </div>
+        
+        <h4>CSS for Responsive Iframes:</h4>
+        <pre><code>.responsive-iframe {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}</code></pre>
+    </section>
+    
+    <hr>
+    
+    <!-- Accessibility -->
+    <section id="accessibility">
+        <h2>Iframe Accessibility</h2>
+        
+        <h3>Essential for Screen Readers</h3>
+        <p>Always provide a descriptive title attribute:</p>
+        
+        <iframe src="https://example.com" 
+                width="600" 
+                height="400"
+                title="Company contact form for customer inquiries">
+        </iframe>
+        
+        <h3>Provide Fallback Content</h3>
+        <p>Include fallback content for browsers that don't support iframes:</p>
+        
+        <iframe src="https://example.com" 
+                width="600" 
+                height="400"
+                title="External content">
+            <p>Your browser does not support iframes. 
+               <a href="https://example.com" target="_blank">Visit the content directly</a>.</p>
+        </iframe>
+        
+        <h3>Focus Management</h3>
+        <p>Consider how keyboard navigation works with embedded content:</p>
+        <ul>
+            <li>Users can tab into iframe content</li>
+            <li>Provide clear focus indicators</li>
+            <li>Consider skip links for lengthy embedded content</li>
+        </ul>
+    </section>
+    
+    <hr>
+    
+    <!-- Common Use Cases -->
+    <section id="use-cases">
+        <h2>Common Iframe Use Cases</h2>
+        
+        <h3>✅ Appropriate Uses</h3>
+        <ul>
+            <li><strong>Third-party widgets:</strong> Social media feeds, chat widgets</li>
+            <li><strong>Maps:</strong> Google Maps, OpenStreetMap</li>
+            <li><strong>Media:</strong> YouTube videos, audio players</li>
+            <li><strong>External tools:</strong> Calculators, forms from other services</li>
+            <li><strong>Advertisements:</strong> Ad network content (with proper security)</li>
+        </ul>
+        
+        <h3>❌ Inappropriate Uses</h3>
+        <ul>
+            <li><strong>Page layout:</strong> Don't use iframes to structure your page</li>
+            <li><strong>Navigation:</strong> Don't embed your own site pages</li>
+            <li><strong>Content splitting:</strong> Keep related content in the same document</li>
+            <li><strong>Untrusted sources:</strong> Avoid embedding suspicious content</li>
+        </ul>
+        
+        <h3>Performance Considerations</h3>
+        <ul>
+            <li>Iframes add HTTP requests and loading time</li>
+            <li>Use <code>loading="lazy"</code> for below-the-fold content</li>
+            <li>Consider the impact on page load performance</li>
+            <li>Monitor third-party content for changes that might affect your site</li>
+        </ul>
+    </section>
+    
+    <hr>
+    
+    <!-- Alternatives to Iframes -->
+    <section id="alternatives">
+        <h2>Alternatives to Iframes</h2>
+        
+        <h3>When to Consider Alternatives</h3>
+        <ul>
+            <li><strong>AJAX/Fetch:</strong> For loading content dynamically</li>
+            <li><strong>Web Components:</strong> For reusable embedded functionality</li>
+            <li><strong>Server-side includes:</strong> For including static content</li>
+            <li><strong>JavaScript widgets:</strong> For interactive third-party content</li>
+        </ul>
+        
+        <h3>Modern Embed Techniques</h3>
+        <p>Many services now provide JavaScript-based embed options that are more flexible than iframes:</p>
+        <pre><code>&lt;!-- Instead of iframe --&gt;
+&lt;script src="https://platform.twitter.com/widgets.js"&gt;&lt;/script&gt;
+&lt;blockquote class="twitter-tweet"&gt;
+    &lt;!-- Tweet content --&gt;
+&lt;/blockquote&gt;</code></pre>
+    </section>
+    
+    <footer>
+        <p><strong>Remember:</strong> Use iframes responsibly with proper security measures, accessibility considerations, and performance awareness!</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alex Rodriguez - Frontend Developer Portfolio with modern CSS styling">
+    <meta name="author" content="Alex Rodriguez">
+    
+    <title>Alex Rodriguez - Frontend Developer</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Alex Rodriguez</h1>
+                    <p class="tagline">Frontend Developer</p>
+                </div>
+                
+                <nav class="main-navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2 class="hero-title">
+                            Building <span class="accent-text">Beautiful</span> &amp; 
+                            <span class="accent-text">Functional</span> Web Experiences
+                        </h2>
+                        <p class="hero-description">
+                            I'm a passionate frontend developer with 4 years of experience creating 
+                            responsive, accessible, and user-friendly websites and applications.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">View My Work</a>
+                            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://via.placeholder.com/400x400/4F46E5/white?text=Profile" 
+                             alt="Alex Rodriguez - Professional headshot" 
+                             class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="lead-paragraph">
+                            I'm a <strong>frontend developer</strong> based in Austin, Texas, with a passion 
+                            for creating digital experiences that make a difference. My journey in web development 
+                            began 4 years ago, and I've been continuously learning and growing ever since.
+                        </p>
+                        
+                        <p>
+                            I specialize in <em>modern JavaScript frameworks</em>, responsive design, and 
+                            web accessibility. I believe that great design is not just about how something 
+                            looks, but how it works and how it makes people feel.
+                        </p>
+                        
+                        <p>
+                            When I'm not coding, you can find me hiking the trails around Austin, 
+                            experimenting with new recipes, or contributing to open-source projects 
+                            that help make the web more accessible for everyone.
+                        </p>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="category-title">Frontend Technologies</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item skill-expert">HTML5 &amp; Semantic Markup</li>
+                            <li class="skill-item skill-expert">CSS3 &amp; Modern Layouts</li>
+                            <li class="skill-item skill-advanced">JavaScript (ES6+)</li>
+                            <li class="skill-item skill-advanced">React.js &amp; Hooks</li>
+                            <li class="skill-item skill-intermediate">Vue.js</li>
+                            <li class="skill-item skill-intermediate">TypeScript</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">CSS &amp; Styling</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item skill-expert">Flexbox &amp; Grid</li>
+                            <li class="skill-item skill-expert">Responsive Design</li>
+                            <li class="skill-item skill-advanced">Sass/SCSS</li>
+                            <li class="skill-item skill-advanced">CSS-in-JS</li>
+                            <li class="skill-item skill-intermediate">Tailwind CSS</li>
+                            <li class="skill-item skill-intermediate">CSS Animations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">Tools &amp; Workflow</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item skill-advanced">Git &amp; GitHub</li>
+                            <li class="skill-item skill-advanced">Webpack &amp; Vite</li>
+                            <li class="skill-item skill-intermediate">npm &amp; Yarn</li>
+                            <li class="skill-item skill-intermediate">Figma &amp; Design Systems</li>
+                            <li class="skill-item skill-beginner">Docker</li>
+                            <li class="skill-item skill-beginner">AWS Basics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">Soft Skills</h3>
+                        <ul class="skills-list">
+                            <li class="skill-item skill-expert">Problem Solving</li>
+                            <li class="skill-item skill-expert">Attention to Detail</li>
+                            <li class="skill-item skill-advanced">Team Collaboration</li>
+                            <li class="skill-item skill-advanced">Client Communication</li>
+                            <li class="skill-item skill-intermediate">Project Management</li>
+                            <li class="skill-item skill-intermediate">Mentoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">
+                    Here are some of my recent projects that showcase my skills in 
+                    frontend development and user experience design.
+                </p>
+                
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/3B82F6/white?text=E-commerce+App" 
+                                 alt="E-commerce web application dashboard">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-commerce Platform</h3>
+                            <p class="project-description">
+                                A full-featured e-commerce platform built with React and modern CSS. 
+                                Includes user authentication, shopping cart, and payment integration.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">CSS Grid</span>
+                                <span class="tech-tag">Stripe API</span>
+                                <span class="tech-tag">Firebase</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>Live Demo</span>
+                                    <span class="link-arrow">→</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>View Code</span>
+                                    <span class="link-arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/10B981/white?text=Weather+App" 
+                                 alt="Weather application showing current conditions">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Weather Dashboard</h3>
+                            <p class="project-description">
+                                A responsive weather application with location-based forecasts, 
+                                interactive charts, and a clean, modern interface.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Weather API</span>
+                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">CSS3</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>Live Demo</span>
+                                    <span class="link-arrow">→</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>View Code</span>
+                                    <span class="link-arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/F59E0B/white?text=Portfolio+Site" 
+                                 alt="Personal portfolio website homepage">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Personal Portfolio</h3>
+                            <p class="project-description">
+                                A fully responsive personal portfolio site featuring modern CSS techniques, 
+                                smooth animations, and optimized performance.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">Vanilla JS</span>
+                                <span class="tech-tag">Sass</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>Live Demo</span>
+                                    <span class="link-arrow">→</span>
+                                </a>
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <span>View Code</span>
+                                    <span class="link-arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-description">
+                    I'm always open to discussing new opportunities and interesting projects. 
+                    Let's create something amazing together!
+                </p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <div class="contact-methods">
+                            <a href="mailto:alex@alexrodriguez.dev" class="contact-method">
+                                <span class="contact-icon">✉️</span>
+                                <div class="contact-details">
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">alex@alexrodriguez.dev</span>
+                                </div>
+                            </a>
+                            
+                            <a href="https://linkedin.com/in/alexrodriguez" class="contact-method" target="_blank" rel="noopener">
+                                <span class="contact-icon">💼</span>
+                                <div class="contact-details">
+                                    <span class="contact-label">LinkedIn</span>
+                                    <span class="contact-value">linkedin.com/in/alexrodriguez</span>
+                                </div>
+                            </a>
+                            
+                            <a href="https://github.com/alexrodriguez" class="contact-method" target="_blank" rel="noopener">
+                                <span class="contact-icon">🐱</span>
+                                <div class="contact-details">
+                                    <span class="contact-label">GitHub</span>
+                                    <span class="contact-value">github.com/alexrodriguez</span>
+                                </div>
+                            </a>
+                            
+                            <a href="tel:+15551234567" class="contact-method">
+                                <span class="contact-icon">📞</span>
+                                <div class="contact-details">
+                                    <span class="contact-label">Phone</span>
+                                    <span class="contact-value">+1 (555) 123-4567</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send a Message</h3>
+                        <form class="message-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name *</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full-width">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Alex Rodriguez. All rights reserved.</p>
+                    <p>Designed and built with ❤️ using semantic HTML and modern CSS.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+            
+            <div class="back-to-top">
+                <a href="#top" class="back-to-top-link" aria-label="Back to top">
+                    <span>↑</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

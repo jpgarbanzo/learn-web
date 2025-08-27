@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Syntax and Basics</title>
+    
+    <!-- Internal CSS example -->
+    <style>
+        /* This is a CSS comment */
+        /* Basic CSS rule structure:
+           selector {
+               property: value;
+               property: value;
+           }
+        */
+        
+        /* Element selector targeting all h1 elements */
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Class selector targeting elements with class="intro" */
+        .intro {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        
+        /* ID selector targeting element with id="main-content" */
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        /* Multiple selectors with same styling */
+        h2, h3, h4 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        /* Descendant selector: paragraphs inside elements with class="example" */
+        .example p {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        
+        /* Universal selector (applies to all elements) */
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Attribute selector */
+        input[type="text"] {
+            border: 2px solid #bdc3c7;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        /* Pseudo-class selector */
+        a:hover {
+            color: #e74c3c;
+            text-decoration: underline;
+        }
+        
+        /* Code styling for better readability */
+        code {
+            background-color: #f1c40f;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-content">
+        <h1>CSS Syntax and Structure</h1>
+        
+        <div class="intro">
+            <p>Welcome to CSS! This page demonstrates basic CSS syntax, selectors, and how styles are applied to HTML elements.</p>
+        </div>
+        
+        <section>
+            <h2>CSS Rule Structure</h2>
+            <p>Every CSS rule consists of a <strong>selector</strong> and a <strong>declaration block</strong>:</p>
+            
+            <pre>selector {
+    property: value;
+    property: value;
+}</pre>
+            
+            <div class="example">
+                <h3>Example Breakdown</h3>
+                <p>Here's how this heading is styled:</p>
+                <pre>h3 {
+    color: #34495e;        /* Text color */
+    margin-top: 30px;      /* Space above */
+    margin-bottom: 15px;   /* Space below */
+}</pre>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Types of Selectors</h2>
+            
+            <h3>1. Element Selectors</h3>
+            <p>Target all elements of a specific type:</p>
+            <pre>p {
+    color: black;
+    font-size: 16px;
+}</pre>
+            
+            <h3>2. Class Selectors</h3>
+            <p>Target elements with a specific class attribute (notice the dot prefix):</p>
+            <pre>.intro {
+    background-color: #ecf0f1;
+    padding: 20px;
+}</pre>
+            
+            <h3>3. ID Selectors</h3>
+            <p>Target a specific element with an ID (notice the hash prefix):</p>
+            <pre>#main-content {
+    max-width: 800px;
+    margin: 0 auto;
+}</pre>
+            
+            <h3>4. Attribute Selectors</h3>
+            <p>Target elements based on their attributes:</p>
+            <pre>input[type="text"] {
+    border: 2px solid #bdc3c7;
+    padding: 8px;
+}</pre>
+            
+            <h3>5. Pseudo-class Selectors</h3>
+            <p>Target elements in specific states. Try hovering over <a href="#">this link</a>!</p>
+            <pre>a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}</pre>
+        </section>
+        
+        <section>
+            <h2>CSS Properties and Values</h2>
+            <p>Properties define <em>what</em> you want to style, values define <em>how</em>:</p>
+            
+            <div class="example">
+                <h3>Common Property Types</h3>
+                <p><strong>Color Properties:</strong></p>
+                <ul>
+                    <li><code>color</code> - text color</li>
+                    <li><code>background-color</code> - background color</li>
+                </ul>
+                
+                <p><strong>Typography Properties:</strong></p>
+                <ul>
+                    <li><code>font-family</code> - font typeface</li>
+                    <li><code>font-size</code> - size of text</li>
+                    <li><code>font-weight</code> - boldness of text</li>
+                </ul>
+                
+                <p><strong>Layout Properties:</strong></p>
+                <ul>
+                    <li><code>margin</code> - space outside element</li>
+                    <li><code>padding</code> - space inside element</li>
+                    <li><code>border</code> - border around element</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>CSS Comments</h2>
+            <p>Comments help document your CSS code:</p>
+            <pre>/* This is a single-line comment */
+
+/*
+   This is a multi-line comment
+   that can span several lines
+   and explain complex styling decisions
+*/</pre>
+        </section>
+        
+        <section>
+            <h2>Grouping Selectors</h2>
+            <p>Apply the same styles to multiple selectors by separating them with commas:</p>
+            <pre>h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 15px;
+}</pre>
+            
+            <div class="example">
+                <p>This is more efficient than writing separate rules for each heading level!</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Interactive Example</h2>
+            <p>Try typing in this input field to see attribute selector styling:</p>
+            <input type="text" placeholder="Text input with custom styling">
+            
+            <p>The input field above is styled with:</p>
+            <pre>input[type="text"] {
+    border: 2px solid #bdc3c7;
+    padding: 8px;
+    border-radius: 4px;
+}</pre>
+        </section>
+        
+        <!-- Inline CSS example -->
+        <section>
+            <h2>Inline CSS Example</h2>
+            <p>This paragraph uses inline CSS styling:</p>
+            <p style="color: #e74c3c; background-color: #fadbd8; padding: 15px; border-radius: 5px;">
+                Inline styles are applied directly to elements using the style attribute. 
+                While they have high specificity, they're harder to maintain and should be used sparingly.
+            </p>
+            
+            <div class="example">
+                <p><strong>Note:</strong> Inline styles override external and internal CSS due to higher specificity.</p>
+            </div>
+        </section>
+        
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #ecf0f1; text-align: center;">
+            <p><strong>Remember:</strong> Good CSS is organized, commented, and follows consistent naming conventions!</p>
+        </footer>
+    </div>
+</body>
+</html>

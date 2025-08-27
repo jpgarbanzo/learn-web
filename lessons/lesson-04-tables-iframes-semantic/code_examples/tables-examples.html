@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables Examples</title>
+    <style>
+        /* Basic styling for better visibility */
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        .number { text-align: right; }
+        .center { text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>HTML Tables Examples</h1>
+    
+    <!-- Basic Table -->
+    <section id="basic-table">
+        <h2>Basic Table Structure</h2>
+        <p>A simple table with headers and data cells:</p>
+        
+        <table>
+            <caption>Employee Information</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Years</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sarah Johnson</td>
+                    <td>Engineering</td>
+                    <td class="number">3</td>
+                    <td class="number">$75,000</td>
+                </tr>
+                <tr>
+                    <td>Mike Chen</td>
+                    <td>Design</td>
+                    <td class="number">2</td>
+                    <td class="number">$68,000</td>
+                </tr>
+                <tr>
+                    <td>Lisa Rodriguez</td>
+                    <td>Marketing</td>
+                    <td class="number">5</td>
+                    <td class="number">$82,000</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><strong>Average Salary</strong></td>
+                    <td class="number"><strong>$75,000</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    
+    <hr>
+    
+    <!-- Complex Table with Merged Cells -->
+    <section id="complex-table">
+        <h2>Complex Table with Merged Cells</h2>
+        <p>Table demonstrating rowspan and colspan attributes:</p>
+        
+        <table>
+            <caption>Quarterly Sales Report by Region</caption>
+            <thead>
+                <tr>
+                    <th rowspan="2" scope="col">Region</th>
+                    <th colspan="4" scope="colgroup">Quarters</th>
+                    <th rowspan="2" scope="col">Total</th>
+                </tr>
+                <tr>
+                    <th scope="col">Q1</th>
+                    <th scope="col">Q2</th>
+                    <th scope="col">Q3</th>
+                    <th scope="col">Q4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">North</th>
+                    <td class="number">$125,000</td>
+                    <td class="number">$140,000</td>
+                    <td class="number">$155,000</td>
+                    <td class="number">$170,000</td>
+                    <td class="number"><strong>$590,000</strong></td>
+                </tr>
+                <tr>
+                    <th scope="row">South</th>
+                    <td class="number">$95,000</td>
+                    <td class="number">$110,000</td>
+                    <td class="number">$120,000</td>
+                    <td class="number">$135,000</td>
+                    <td class="number"><strong>$460,000</strong></td>
+                </tr>
+                <tr>
+                    <th scope="row">East</th>
+                    <td class="number">$200,000</td>
+                    <td class="number">$215,000</td>
+                    <td class="number">$230,000</td>
+                    <td class="number">$245,000</td>
+                    <td class="number"><strong>$890,000</strong></td>
+                </tr>
+                <tr>
+                    <th scope="row">West</th>
+                    <td class="number">$180,000</td>
+                    <td class="number">$195,000</td>
+                    <td class="number">$210,000</td>
+                    <td class="number">$225,000</td>
+                    <td class="number"><strong>$810,000</strong></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th scope="row">Total</th>
+                    <td class="number"><strong>$600,000</strong></td>
+                    <td class="number"><strong>$660,000</strong></td>
+                    <td class="number"><strong>$715,000</strong></td>
+                    <td class="number"><strong>$775,000</strong></td>
+                    <td class="number"><strong>$2,750,000</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    
+    <hr>
+    
+    <!-- Accessible Table with Headers Attribute -->
+    <section id="accessible-table">
+        <h2>Highly Accessible Table</h2>
+        <p>Table using headers attribute for complex relationships:</p>
+        
+        <table>
+            <caption>Product Comparison - Features and Pricing</caption>
+            <thead>
+                <tr>
+                    <th id="product" scope="col">Product</th>
+                    <th id="basic" scope="col">Basic Plan</th>
+                    <th id="pro" scope="col">Pro Plan</th>
+                    <th id="enterprise" scope="col">Enterprise Plan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="storage" scope="row">Storage</th>
+                    <td headers="basic storage">10 GB</td>
+                    <td headers="pro storage">100 GB</td>
+                    <td headers="enterprise storage">Unlimited</td>
+                </tr>
+                <tr>
+                    <th id="users" scope="row">Max Users</th>
+                    <td headers="basic users">5</td>
+                    <td headers="pro users">25</td>
+                    <td headers="enterprise users">Unlimited</td>
+                </tr>
+                <tr>
+                    <th id="support" scope="row">Support</th>
+                    <td headers="basic support">Email</td>
+                    <td headers="pro support">Phone + Email</td>
+                    <td headers="enterprise support">24/7 Dedicated</td>
+                </tr>
+                <tr>
+                    <th id="price" scope="row">Monthly Price</th>
+                    <td headers="basic price" class="number">$9.99</td>
+                    <td headers="pro price" class="number">$29.99</td>
+                    <td headers="enterprise price" class="number">Contact Us</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <hr>
+    
+    <!-- Data Table vs Layout Table -->
+    <section id="table-types">
+        <h2>When to Use Tables</h2>
+        
+        <h3>✅ Appropriate Use: Tabular Data</h3>
+        <table>
+            <caption>Stock Market Performance</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">AAPL</th>
+                    <td>Apple Inc.</td>
+                    <td class="number">$150.25</td>
+                    <td class="number">+2.15%</td>
+                </tr>
+                <tr>
+                    <th scope="row">GOOGL</th>
+                    <td>Alphabet Inc.</td>
+                    <td class="number">$2,345.67</td>
+                    <td class="number">-0.85%</td>
+                </tr>
+                <tr>
+                    <th scope="row">MSFT</th>
+                    <td>Microsoft Corp.</td>
+                    <td class="number">$308.52</td>
+                    <td class="number">+1.42%</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>❌ Inappropriate Use: Page Layout</h3>
+        <p><strong>Don't use tables for layout!</strong> Instead, use CSS Grid or Flexbox:</p>
+        <pre><code>
+&lt;!-- Wrong: Using table for layout --&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Header&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Sidebar&lt;/td&gt;
+        &lt;td&gt;Main Content&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;!-- Right: Using semantic elements with CSS --&gt;
+&lt;header&gt;Header&lt;/header&gt;
+&lt;main&gt;
+    &lt;aside&gt;Sidebar&lt;/aside&gt;
+    &lt;article&gt;Main Content&lt;/article&gt;
+&lt;/main&gt;
+        </code></pre>
+    </section>
+    
+    <hr>
+    
+    <!-- Table Accessibility Tips -->
+    <section id="accessibility-tips">
+        <h2>Table Accessibility Best Practices</h2>
+        
+        <h3>Essential Elements</h3>
+        <ul>
+            <li><strong>Caption:</strong> Always describe what the table contains</li>
+            <li><strong>th elements:</strong> Use for headers, not just td with bold styling</li>
+            <li><strong>scope attribute:</strong> Specify "col" or "row" to clarify header relationships</li>
+            <li><strong>headers attribute:</strong> For complex tables, explicitly associate data with headers</li>
+        </ul>
+        
+        <h3>Structure Guidelines</h3>
+        <ul>
+            <li>Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> to group content</li>
+            <li>Keep table structure simple when possible</li>
+            <li>Provide summaries for complex data relationships</li>
+            <li>Test with screen readers and keyboard navigation</li>
+        </ul>
+        
+        <h3>Responsive Considerations</h3>
+        <ul>
+            <li>Consider horizontal scrolling for wide tables on mobile</li>
+            <li>Use CSS to make tables more mobile-friendly</li>
+            <li>Provide alternative views for complex tables on small screens</li>
+            <li>Ensure touch targets are large enough for mobile users</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p><strong>Remember:</strong> Tables are for tabular data, not page layout. Always prioritize accessibility and semantic meaning!</p>
+    </footer>
+</body>
+</html>

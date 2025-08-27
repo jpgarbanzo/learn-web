@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Images Examples</title>
+</head>
+<body>
+    <h1>HTML Images and Graphics</h1>
+    
+    <!-- Basic Image Usage -->
+    <section id="basic-images">
+        <h2>Basic Image Usage</h2>
+        
+        <h3>Simple Image with Alt Text</h3>
+        <p>Always include descriptive alt text for accessibility:</p>
+        <!-- Note: Using placeholder images since actual image files don't exist -->
+        <img src="https://via.placeholder.com/300x200/4CAF50/white?text=Sample+Image" 
+             alt="A green placeholder image with white text saying Sample Image">
+        
+        <h3>Image with Title (Tooltip)</h3>
+        <p>The title attribute provides additional information on hover:</p>
+        <img src="https://via.placeholder.com/250x150/2196F3/white?text=Blue+Box" 
+             alt="Blue rectangular placeholder image" 
+             title="This is a blue placeholder image that shows a tooltip on hover">
+    </section>
+    
+    <hr>
+    
+    <!-- Image Sizing -->
+    <section id="image-sizing">
+        <h2>Image Sizing and Dimensions</h2>
+        
+        <h3>Fixed Width and Height</h3>
+        <p>You can specify exact dimensions using width and height attributes:</p>
+        <img src="https://via.placeholder.com/400x300/FF9800/white?text=Original" 
+             alt="Orange placeholder image" 
+             width="200" 
+             height="150">
+        
+        <h3>Responsive Image (Width Only)</h3>
+        <p>Setting only width maintains aspect ratio:</p>
+        <img src="https://via.placeholder.com/600x400/9C27B0/white?text=Responsive" 
+             alt="Purple placeholder image that scales responsively" 
+             width="300">
+        
+        <h3>Percentage-based Sizing</h3>
+        <p>Images can be sized as a percentage of their container:</p>
+        <div style="border: 1px solid #ccc; padding: 10px; width: 500px;">
+            <img src="https://via.placeholder.com/800x200/E91E63/white?text=100%25+Width" 
+                 alt="Pink banner image that fills container width" 
+                 style="width: 100%; height: auto;">
+        </div>
+    </section>
+    
+    <hr>
+    
+    <!-- Different Image Formats -->
+    <section id="image-formats">
+        <h2>Image Formats and Use Cases</h2>
+        
+        <h3>JPEG - Photos and Complex Images</h3>
+        <p>Best for photographs and images with many colors:</p>
+        <img src="https://via.placeholder.com/300x200/795548/white?text=JPEG+Photo" 
+             alt="Brown placeholder representing a JPEG photograph" 
+             title="JPEG format - good for photos">
+        
+        <h3>PNG - Graphics with Transparency</h3>
+        <p>Best for graphics, logos, and images needing transparency:</p>
+        <img src="https://via.placeholder.com/300x200/607D8B/white?text=PNG+Logo" 
+             alt="Blue-gray placeholder representing a PNG logo" 
+             title="PNG format - supports transparency">
+        
+        <h3>SVG - Scalable Vector Graphics</h3>
+        <p>Best for simple graphics, icons, and logos that need to scale:</p>
+        <!-- Inline SVG example -->
+        <svg width="300" height="200" viewBox="0 0 300 200" style="border: 1px solid #ccc;">
+            <rect width="300" height="200" fill="#673AB7"/>
+            <text x="150" y="100" text-anchor="middle" dy=".3em" fill="white" font-family="Arial" font-size="24">SVG Vector</text>
+        </svg>
+        
+        <h3>WebP - Modern Web Format</h3>
+        <p>Modern format with better compression (not all browsers support):</p>
+        <img src="https://via.placeholder.com/300x200/FF5722/white?text=WebP+Format" 
+             alt="Orange placeholder representing WebP format" 
+             title="WebP format - modern and efficient">
+    </section>
+    
+    <hr>
+    
+    <!-- Image Accessibility -->
+    <section id="accessibility">
+        <h2>Image Accessibility</h2>
+        
+        <h3>Decorative Images</h3>
+        <p>For purely decorative images, use empty alt text:</p>
+        <img src="https://via.placeholder.com/100x100/FFC107/white?text=🎨" 
+             alt="" 
+             title="Decorative border element">
+        <p>This decorative image adds visual interest but conveys no important information.</p>
+        
+        <h3>Informative Images</h3>
+        <p>For images that convey information, provide descriptive alt text:</p>
+        <img src="https://via.placeholder.com/300x200/8BC34A/white?text=Sales+Chart" 
+             alt="Bar chart showing 25% increase in sales from Q1 to Q2" 
+             title="Quarterly sales data visualization">
+        
+        <h3>Complex Images</h3>
+        <p>For complex images like charts or diagrams, provide detailed descriptions:</p>
+        <img src="https://via.placeholder.com/400x300/3F51B5/white?text=Complex+Diagram" 
+             alt="Website architecture diagram showing three main components: frontend (HTML, CSS, JS), backend (server, database), and API connections between them" 
+             title="System architecture overview">
+        <p>Additional description: This diagram illustrates the three-tier architecture commonly used in web development...</p>
+    </section>
+    
+    <hr>
+    
+    <!-- Image as Links -->
+    <section id="image-links">
+        <h2>Images as Links</h2>
+        
+        <h3>Clickable Images</h3>
+        <p>Images can be wrapped in anchor tags to make them clickable:</p>
+        <a href="https://example.com" target="_blank">
+            <img src="https://via.placeholder.com/200x100/009688/white?text=Click+Me" 
+                 alt="Green button image that links to example.com">
+        </a>
+        
+        <h3>Image with Caption Link</h3>
+        <figure>
+            <a href="https://example.com/portfolio" target="_blank">
+                <img src="https://via.placeholder.com/300x200/FF6B6B/white?text=Portfolio+Preview" 
+                     alt="Preview of web development portfolio showcasing various projects">
+            </a>
+            <figcaption>
+                <a href="https://example.com/portfolio" target="_blank">View Full Portfolio</a>
+            </figcaption>
+        </figure>
+        
+        <h3>Logo as Home Link</h3>
+        <a href="/" title="Go to homepage">
+            <img src="https://via.placeholder.com/150x50/333333/white?text=LOGO" 
+                 alt="Company Logo" 
+                 style="display: block;">
+        </a>
+    </section>
+    
+    <hr>
+    
+    <!-- Image Best Practices -->
+    <section id="best-practices">
+        <h2>Image Best Practices</h2>
+        
+        <h3>File Organization</h3>
+        <p>Organize images in a logical folder structure:</p>
+        <pre>
+/images/
+  /photos/
+    profile.jpg
+    team.jpg
+  /icons/
+    home.svg
+    contact.svg
+  /logos/
+    company-logo.png
+    partner-logos/
+        </pre>
+        
+        <h3>Naming Conventions</h3>
+        <ul>
+            <li>Use descriptive, lowercase names</li>
+            <li>Replace spaces with hyphens</li>
+            <li>Include dimensions if needed</li>
+        </ul>
+        <p>Examples:</p>
+        <ul>
+            <li><code>hero-banner-1920x1080.jpg</code></li>
+            <li><code>profile-photo-john-smith.jpg</code></li>
+            <li><code>social-media-icons.png</code></li>
+        </ul>
+        
+        <h3>Performance Considerations</h3>
+        <ul>
+            <li>Optimize file sizes for web delivery</li>
+            <li>Use appropriate formats for content type</li>
+            <li>Consider lazy loading for images below the fold</li>
+            <li>Provide multiple sizes for responsive design</li>
+        </ul>
+        
+        <h3>Accessibility Checklist</h3>
+        <ul>
+            <li>✓ Always include alt attribute (empty for decorative images)</li>
+            <li>✓ Write descriptive alt text that conveys the image's purpose</li>
+            <li>✓ Don't repeat information already in surrounding text</li>
+            <li>✓ For complex images, provide additional description</li>
+            <li>✓ Test with screen readers when possible</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p><strong>Remember:</strong> Images enhance user experience but should always be accessible to all users, including those using screen readers!</p>
+    </footer>
+</body>
+</html>

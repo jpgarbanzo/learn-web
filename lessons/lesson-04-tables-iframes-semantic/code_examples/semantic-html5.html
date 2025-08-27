@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML5 Elements Examples</title>
+    <style>
+        /* Basic styling to visualize semantic structure */
+        header, nav, main, section, article, aside, footer {
+            border: 2px solid #ddd;
+            margin: 10px 0;
+            padding: 15px;
+        }
+        header { background-color: #e3f2fd; }
+        nav { background-color: #f3e5f5; }
+        main { background-color: #e8f5e8; }
+        section { background-color: #fff3e0; }
+        article { background-color: #fce4ec; }
+        aside { background-color: #f1f8e9; }
+        footer { background-color: #e0e0e0; }
+        
+        .semantic-example {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        figure {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        
+        figcaption {
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        time {
+            font-weight: bold;
+            color: #2196F3;
+        }
+        
+        mark {
+            background-color: yellow;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Document Header -->
+    <header>
+        <h1>Semantic HTML5 Elements Guide</h1>
+        <p>Understanding the meaning and structure of modern HTML</p>
+    </header>
+    
+    <!-- Main Navigation -->
+    <nav>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#structure">Document Structure</a></li>
+            <li><a href="#content">Content Sectioning</a></li>
+            <li><a href="#text-semantics">Text Semantics</a></li>
+            <li><a href="#interactive">Interactive Elements</a></li>
+            <li><a href="#complete-example">Complete Example</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <h2>Main Content Area</h2>
+        <p>The main element contains the primary content of the document, unique to this page.</p>
+        
+        <!-- Document Structure Section -->
+        <section id="structure">
+            <h2>Document Structure Elements</h2>
+            <p>These elements define the overall structure and organization of your document:</p>
+            
+            <article>
+                <h3>&lt;header&gt; Element</h3>
+                <p><strong>Purpose:</strong> Represents introductory content or navigational aids.</p>
+                <p><strong>Can contain:</strong> Headings, logo, search form, author info</p>
+                <p><strong>Usage:</strong> Page header, section header, or article header</p>
+                
+                <div class="semantic-example">
+                    &lt;header&gt;<br>
+                    &nbsp;&nbsp;&lt;h1&gt;Site Title&lt;/h1&gt;<br>
+                    &nbsp;&nbsp;&lt;p&gt;Site tagline or description&lt;/p&gt;<br>
+                    &lt;/header&gt;
+                </div>
+            </article>
+            
+            <article>
+                <h3>&lt;nav&gt; Element</h3>
+                <p><strong>Purpose:</strong> Contains navigation links to other pages or sections.</p>
+                <p><strong>Best practices:</strong> Use for major navigation blocks, not all link groups</p>
+                
+                <div class="semantic-example">
+                    &lt;nav&gt;<br>
+                    &nbsp;&nbsp;&lt;ul&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&lt;/ul&gt;<br>
+                    &lt;/nav&gt;
+                </div>
+            </article>
+            
+            <article>
+                <h3>&lt;main&gt; Element</h3>
+                <p><strong>Purpose:</strong> The main content of the document body.</p>
+                <p><strong>Rules:</strong> Only one main element per page, excludes repeated content</p>
+                <p><strong>Contains:</strong> The primary content unique to this page</p>
+            </article>
+            
+            <article>
+                <h3>&lt;footer&gt; Element</h3>
+                <p><strong>Purpose:</strong> Footer for nearest sectioning content or root.</p>
+                <p><strong>Typical content:</strong> Author info, copyright, related links</p>
+                
+                <div class="semantic-example">
+                    &lt;footer&gt;<br>
+                    &nbsp;&nbsp;&lt;p&gt;&copy; 2024 Company Name. All rights reserved.&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&lt;nav&gt;&lt;!-- Footer navigation --&gt;&lt;/nav&gt;<br>
+                    &lt;/footer&gt;
+                </div>
+            </article>
+        </section>
+        
+        <!-- Content Sectioning -->
+        <section id="content">
+            <h2>Content Sectioning Elements</h2>
+            <p>These elements organize content into logical sections:</p>
+            
+            <article>
+                <h3>&lt;section&gt; Element</h3>
+                <p><strong>Purpose:</strong> Generic section of content with a thematic grouping.</p>
+                <p><strong>Rule:</strong> Should have a heading (h1-h6) to describe the section</p>
+                <p><strong>Use when:</strong> Content is related but doesn't warrant its own page</p>
+                
+                <section>
+                    <h4>Example: Product Features Section</h4>
+                    <div class="semantic-example">
+                        &lt;section&gt;<br>
+                        &nbsp;&nbsp;&lt;h2&gt;Features&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&lt;p&gt;Our product offers these benefits...&lt;/p&gt;<br>
+                        &lt;/section&gt;
+                    </div>
+                </section>
+            </article>
+            
+            <article>
+                <h3>&lt;article&gt; Element</h3>
+                <header>
+                    <h4>What is an Article?</h4>
+                    <p><strong>Published:</strong> <time datetime="2024-01-15">January 15, 2024</time></p>
+                </header>
+                
+                <p><strong>Purpose:</strong> Self-contained, reusable content that could stand alone.</p>
+                <p><strong>Examples:</strong> Blog posts, news articles, product reviews, comments</p>
+                <p><strong>Test:</strong> Would this content make sense in an RSS feed?</p>
+                
+                <div class="semantic-example">
+                    &lt;article&gt;<br>
+                    &nbsp;&nbsp;&lt;header&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Article Title&lt;/h2&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;By Author Name&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&lt;/header&gt;<br>
+                    &nbsp;&nbsp;&lt;p&gt;Article content...&lt;/p&gt;<br>
+                    &lt;/article&gt;
+                </div>
+                
+                <footer>
+                    <p><small>This article demonstrates the article element structure.</small></p>
+                </footer>
+            </article>
+            
+            <aside>
+                <h3>&lt;aside&gt; Element</h3>
+                <p><strong>Purpose:</strong> Content tangentially related to main content.</p>
+                <p><strong>Examples:</strong> Sidebars, pull quotes, advertisements, related links</p>
+                <p><strong>Context matters:</strong> Can be used within articles or as page-level sidebar</p>
+                
+                <blockquote>
+                    <p>"The aside element is perfect for content that supports but doesn't belong in the main flow."</p>
+                </blockquote>
+            </aside>
+        </section>
+        
+        <!-- Text Semantics -->
+        <section id="text-semantics">
+            <h2>Text-Level Semantic Elements</h2>
+            <p>These elements add meaning to text content:</p>
+            
+            <article>
+                <h3>Date and Time Elements</h3>
+                <p>Use the <code>&lt;time&gt;</code> element for dates and times:</p>
+                
+                <ul>
+                    <li>Event date: <time datetime="2024-12-25">December 25, 2024</time></li>
+                    <li>Publication time: <time datetime="2024-01-15T14:30:00">2:30 PM on January 15</time></li>
+                    <li>Duration: <time datetime="PT2H30M">2 hours 30 minutes</time></li>
+                </ul>
+                
+                <div class="semantic-example">
+                    &lt;time datetime="2024-12-25"&gt;Christmas Day&lt;/time&gt;<br>
+                    &lt;time datetime="2024-01-15T14:30:00"&gt;2:30 PM today&lt;/time&gt;
+                </div>
+            </article>
+            
+            <article>
+                <h3>Highlighting and Emphasis</h3>
+                <p>Different ways to emphasize text content:</p>
+                
+                <ul>
+                    <li><strong>&lt;mark&gt;</strong>: <mark>Highlighted text</mark> (like a highlighter)</li>
+                    <li><strong>&lt;strong&gt;</strong>: <strong>Important text</strong> (strong importance)</li>
+                    <li><strong>&lt;em&gt;</strong>: <em>Emphasized text</em> (stress emphasis)</li>
+                    <li><strong>&lt;small&gt;</strong>: <small>Fine print or side comments</small></li>
+                </ul>
+                
+                <p>Example: <mark>This quarter</mark> showed <strong>significant growth</strong> in sales, 
+                   which was <em>particularly impressive</em> given market conditions. 
+                   <small>(Data subject to revision)</small></p>
+            </article>
+            
+            <article>
+                <h3>Figure and Caption</h3>
+                <p>Use figure and figcaption for images, charts, code examples, etc.:</p>
+                
+                <figure>
+                    <img src="https://via.placeholder.com/400x200/4CAF50/white?text=Revenue+Chart" 
+                         alt="Bar chart showing revenue growth over 4 quarters" 
+                         width="400" height="200">
+                    <figcaption>
+                        Figure 1: Quarterly revenue growth showing 15% increase year-over-year
+                    </figcaption>
+                </figure>
+                
+                <figure>
+                    <pre><code>&lt;figure&gt;
+    &lt;img src="chart.png" alt="Chart description"&gt;
+    &lt;figcaption&gt;Chart caption&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                    <figcaption>Code example: Basic figure structure</figcaption>
+                </figure>
+            </article>
+        </section>
+        
+        <!-- Interactive Elements -->
+        <section id="interactive">
+            <h2>Interactive Elements</h2>
+            
+            <article>
+                <h3>&lt;details&gt; and &lt;summary&gt;</h3>
+                <p>Create collapsible content sections:</p>
+                
+                <details>
+                    <summary>Click to expand: Advanced CSS Topics</summary>
+                    <ul>
+                        <li>CSS Grid Layout</li>
+                        <li>CSS Custom Properties (Variables)</li>
+                        <li>CSS Animation and Transitions</li>
+                        <li>CSS Preprocessors (Sass, Less)</li>
+                    </ul>
+                </details>
+                
+                <details>
+                    <summary>Frequently Asked Question</summary>
+                    <p><strong>Q: How do semantic elements help with SEO?</strong></p>
+                    <p>A: Semantic elements help search engines understand your content structure, 
+                       which can improve how your pages are indexed and displayed in search results.</p>
+                </details>
+                
+                <div class="semantic-example">
+                    &lt;details&gt;<br>
+                    &nbsp;&nbsp;&lt;summary&gt;Click to expand&lt;/summary&gt;<br>
+                    &nbsp;&nbsp;&lt;p&gt;Hidden content goes here&lt;/p&gt;<br>
+                    &lt;/details&gt;
+                </div>
+            </article>
+        </section>
+        
+        <!-- Complete Example -->
+        <section id="complete-example">
+            <h2>Complete Semantic Structure Example</h2>
+            <p>Here's how semantic elements work together in a typical webpage:</p>
+            
+            <pre style="background: #f5f5f5; padding: 20px; overflow-x: auto;"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Blog Post Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Blog&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h1&gt;Understanding Semantic HTML&lt;/h1&gt;
+                &lt;p&gt;Published &lt;time datetime="2024-01-15"&gt;January 15, 2024&lt;/time&gt;&lt;/p&gt;
+            &lt;/header&gt;
+            
+            &lt;section&gt;
+                &lt;h2&gt;Introduction&lt;/h2&gt;
+                &lt;p&gt;Semantic HTML provides meaning...&lt;/p&gt;
+            &lt;/section&gt;
+            
+            &lt;section&gt;
+                &lt;h2&gt;Key Benefits&lt;/h2&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;strong&gt;Accessibility&lt;/strong&gt;: Screen readers understand structure&lt;/li&gt;
+                    &lt;li&gt;&lt;strong&gt;SEO&lt;/strong&gt;: Search engines parse content better&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/section&gt;
+            
+            &lt;footer&gt;
+                &lt;p&gt;Tags: HTML, Semantics, Accessibility&lt;/p&gt;
+            &lt;/footer&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h2&gt;Related Articles&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/html-basics"&gt;HTML Basics&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/css-intro"&gt;CSS Introduction&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 My Blog. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+    </main>
+    
+    <!-- Sidebar Content -->
+    <aside>
+        <h2>Quick Reference</h2>
+        
+        <details>
+            <summary>Semantic Elements Checklist</summary>
+            <ul>
+                <li>✓ Use header for introductory content</li>
+                <li>✓ Use nav for navigation links</li>
+                <li>✓ Use main for primary content (only one per page)</li>
+                <li>✓ Use section for thematic content groupings</li>
+                <li>✓ Use article for standalone content</li>
+                <li>✓ Use aside for tangential content</li>
+                <li>✓ Use footer for closing content</li>
+                <li>✓ Use time for dates and times</li>
+                <li>✓ Use figure/figcaption for images and captions</li>
+            </ul>
+        </details>
+        
+        <details>
+            <summary>Accessibility Benefits</summary>
+            <ul>
+                <li>Screen readers navigate by landmarks</li>
+                <li>Users can skip to main content</li>
+                <li>Content structure is clearly defined</li>
+                <li>Search and find functionality improved</li>
+            </ul>
+        </details>
+        
+        <details>
+            <summary>SEO Benefits</summary>
+            <ul>
+                <li>Search engines understand content hierarchy</li>
+                <li>Featured snippets use semantic structure</li>
+                <li>Rich results leverage structured content</li>
+                <li>Mobile-first indexing relies on semantics</li>
+            </ul>
+        </details>
+    </aside>
+    
+    <!-- Page Footer -->
+    <footer>
+        <p><strong>Remember:</strong> Choose elements based on meaning, not appearance. CSS handles the visual styling!</p>
+        <nav>
+            <ul>
+                <li><a href="#structure">Document Structure</a></li>
+                <li><a href="#content">Content Sectioning</a></li>
+                <li><a href="#text-semantics">Text Semantics</a></li>
+                <li><a href="#interactive">Interactive Elements</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

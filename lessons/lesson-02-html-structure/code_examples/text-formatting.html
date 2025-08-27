@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Text Formatting Examples</title>
+</head>
+<body>
+    <h1>HTML Text Formatting and Paragraphs</h1>
+    
+    <h2>Basic Paragraphs</h2>
+    <p>This is a simple paragraph. HTML automatically handles word wrapping and spacing between paragraphs. Multiple spaces and line breaks in your HTML code are collapsed into single spaces when displayed.</p>
+    
+    <p>This is another paragraph. Notice how browsers automatically add space between paragraph elements.</p>
+    
+    <h2>Line Breaks and Horizontal Rules</h2>
+    <p>Sometimes you need a line break within a paragraph.<br>
+    The &lt;br&gt; tag creates a line break without starting a new paragraph.<br>
+    It's useful for addresses, poems, or anywhere you need precise line control.</p>
+    
+    <!-- Horizontal rule separates content sections -->
+    <hr>
+    
+    <h2>Text Emphasis and Importance</h2>
+    <p>Use <strong>strong</strong> to indicate important text that should be emphasized.</p>
+    <p>Use <em>em</em> to add emphasis or stress to certain words.</p>
+    <p>You can even combine them: <strong><em>very important emphasized text</em></strong>.</p>
+    
+    <h2>Other Text Elements</h2>
+    <p>The <code>&lt;code&gt;</code> element is used for inline code snippets.</p>
+    <p>Use <mark>mark</mark> to highlight text as if with a highlighter.</p>
+    <p>The <small>small</small> element represents side comments or fine print.</p>
+    <p>For subscript: H<sub>2</sub>O (water) and superscript: E=mc<sup>2</sup> (Einstein's equation).</p>
+    
+    <h2>Quotations</h2>
+    <p>For short inline quotes, use the <q>quote element with automatic quotation marks</q>.</p>
+    
+    <blockquote>
+        <p>For longer quotes that should be displayed as a block, use the blockquote element. This is typically indented and styled differently from regular paragraphs.</p>
+        <footer>— Quote attribution can go here</footer>
+    </blockquote>
+    
+    <h2>Preformatted Text</h2>
+    <p>The &lt;pre&gt; element preserves whitespace and line breaks exactly as written:</p>
+    <pre>
+    This text preserves    multiple spaces
+    and line breaks exactly
+        as they appear in the HTML.
+    
+    Perfect for code examples or ASCII art!
+    </pre>
+    
+    <h2>Address Information</h2>
+    <address>
+        Contact Information:<br>
+        John Doe<br>
+        123 Web Development Street<br>
+        HTML City, Web State 12345<br>
+        Email: john@example.com
+    </address>
+    
+    <hr>
+    
+    <h2>Best Practices for Text</h2>
+    <ul>
+        <li><strong>Use semantic elements:</strong> Choose elements based on meaning, not appearance</li>
+        <li><strong>Don't overuse line breaks:</strong> Let CSS handle most formatting</li>
+        <li><strong>Structure content logically:</strong> Use headings and paragraphs to organize information</li>
+        <li><strong>Keep paragraphs focused:</strong> Each paragraph should cover one main idea</li>
+    </ul>
+    
+    <p class="note"><em>Note: While HTML provides basic text formatting, CSS is the preferred method for controlling the visual appearance of text on web pages.</em></p>
+</body>
+</html>

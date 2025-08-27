@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics - Variables, Data Types, and Operators</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .code-block {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .output {
+            background-color: #e8f5e9;
+            border: 1px solid #4caf50;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        
+        .interactive-demo {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        input {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        h1, h2, h3 {
+            color: #333;
+        }
+        
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Fundamentals: Variables, Data Types, and Operators</h1>
+    <p>Open your browser's developer console (F12) to see the JavaScript output!</p>
+    
+    <!-- Variables Section -->
+    <div class="section">
+        <h2>1. Variables and Constants</h2>
+        <p>JavaScript provides three ways to declare variables:</p>
+        
+        <div class="code-block">
+// Variable declarations
+let userName = "Alice";           // Can be reassigned
+const PI = 3.14159;              // Cannot be reassigned
+var oldStyle = "avoid this";     // Function-scoped (avoid in modern JS)
+
+// Reassigning variables
+userName = "Bob";                // This works with let
+// PI = 3.14;                    // This would cause an error!
+
+console.log("User name:", userName);
+console.log("PI constant:", PI);
+        </div>
+        
+        <div class="interactive-demo">
+            <h3>Try It: Variable Declaration</h3>
+            <input type="text" id="nameInput" placeholder="Enter your name">
+            <button onclick="updateName()">Update Name Variable</button>
+            <p id="nameOutput">Name will appear here</p>
+        </div>
+    </div>
+    
+    <!-- Data Types Section -->
+    <div class="section">
+        <h2>2. Data Types</h2>
+        
+        <h3>Primitive Data Types</h3>
+        <div class="code-block">
+// String - text data
+let message = "Hello, World!";
+let singleQuotes = 'Also a string';
+let templateLiteral = `Template literal with ${message}`;
+
+// Number - integers and decimals
+let age = 25;
+let price = 19.99;
+let negative = -42;
+
+// Boolean - true or false
+let isActive = true;
+let isComplete = false;
+
+// Undefined - variable declared but not assigned
+let undefinedVar;
+
+// Null - intentional absence of value
+let emptyValue = null;
+
+console.log("String:", typeof message);
+console.log("Number:", typeof age);
+console.log("Boolean:", typeof isActive);
+console.log("Undefined:", typeof undefinedVar);
+console.log("Null:", typeof emptyValue);  // Note: this shows "object" (JavaScript quirk)
+        </div>
+        
+        <h3>Reference Types</h3>
+        <div class="code-block">
+// Arrays - ordered lists
+let fruits = ["apple", "banana", "orange"];
+let numbers = [1, 2, 3, 4, 5];
+let mixed = [1, "hello", true, null];
+
+// Objects - key-value pairs
+let person = {
+    name: "John Doe",
+    age: 30,
+    city: "New York",
+    isEmployed: true
+};
+
+// Accessing array elements
+console.log("First fruit:", fruits[0]);
+console.log("Array length:", fruits.length);
+
+// Accessing object properties
+console.log("Person name:", person.name);
+console.log("Person age:", person["age"]);  // Alternative syntax
+        </div>
+        
+        <div class="interactive-demo">
+            <h3>Data Type Checker</h3>
+            <input type="text" id="typeInput" placeholder="Enter any value">
+            <button onclick="checkType()">Check Data Type</button>
+            <p id="typeOutput">Data type will appear here</p>
+        </div>
+    </div>
+    
+    <!-- Operators Section -->
+    <div class="section">
+        <h2>3. JavaScript Operators</h2>
+        
+        <h3>Arithmetic Operators</h3>
+        <div class="code-block">
+let a = 10;
+let b = 3;
+
+console.log("Addition:", a + b);        // 13
+console.log("Subtraction:", a - b);     // 7
+console.log("Multiplication:", a * b);  // 30
+console.log("Division:", a / b);        // 3.3333...
+console.log("Modulo (remainder):", a % b);  // 1
+console.log("Exponentiation:", a ** b); // 1000
+
+// String concatenation with +
+let firstName = "John";
+let lastName = "Doe";
+let fullName = firstName + " " + lastName;
+console.log("Full name:", fullName);
+        </div>
+        
+        <h3>Comparison Operators</h3>
+        <div class="code-block">
+let x = 5;
+let y = "5";
+
+// Loose equality (with type coercion)
+console.log("x == y:", x == y);         // true (5 == "5")
+console.log("x == '5':", x == "5");     // true
+
+// Strict equality (no type coercion)
+console.log("x === y:", x === y);       // false (5 !== "5")
+console.log("x === 5:", x === 5);       // true
+
+// Other comparison operators
+console.log("x > 3:", x > 3);           // true
+console.log("x < 10:", x < 10);         // true
+console.log("x >= 5:", x >= 5);         // true
+console.log("x <= 4:", x <= 4);         // false
+        </div>
+        
+        <h3>Logical Operators</h3>
+        <div class="code-block">
+let isLoggedIn = true;
+let hasPermission = false;
+let isAdmin = true;
+
+// AND operator (&&) - both conditions must be true
+console.log("Logged in AND has permission:", isLoggedIn && hasPermission);  // false
+console.log("Logged in AND is admin:", isLoggedIn && isAdmin);              // true
+
+// OR operator (||) - at least one condition must be true
+console.log("Has permission OR is admin:", hasPermission || isAdmin);       // true
+console.log("Has permission OR logged in:", hasPermission || isLoggedIn);   // true
+
+// NOT operator (!) - opposite of the condition
+console.log("NOT logged in:", !isLoggedIn);                                 // false
+console.log("NOT has permission:", !hasPermission);                         // true
+
+// Complex logical expressions
+let canAccess = isLoggedIn && (hasPermission || isAdmin);
+console.log("Can access:", canAccess);  // true
+        </div>
+        
+        <div class="interactive-demo">
+            <h3>Calculator Demo</h3>
+            <input type="number" id="num1" placeholder="First number">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="number" id="num2" placeholder="Second number">
+            <button onclick="calculate()">Calculate</button>
+            <p id="calcOutput">Result will appear here</p>
+        </div>
+    </div>
+    
+    <!-- Template Literals Section -->
+    <div class="section">
+        <h2>4. Template Literals</h2>
+        <div class="code-block">
+let name = "Alice";
+let age = 28;
+let city = "Boston";
+
+// Old way - string concatenation
+let oldMessage = "Hello, my name is " + name + " and I am " + age + " years old.";
+
+// New way - template literals
+let newMessage = `Hello, my name is ${name} and I am ${age} years old.`;
+
+// Multi-line strings
+let address = `
+    Name: ${name}
+    Age: ${age}
+    City: ${city}
+    Country: USA
+`;
+
+// Expressions in template literals
+let calculation = `The sum of 5 and 3 is ${5 + 3}.`;
+let comparison = `Is ${age} greater than 18? ${age > 18 ? 'Yes' : 'No'}`;
+
+console.log("Old message:", oldMessage);
+console.log("New message:", newMessage);
+console.log("Address:", address);
+console.log("Calculation:", calculation);
+console.log("Comparison:", comparison);
+        </div>
+        
+        <div class="interactive-demo">
+            <h3>Template Literal Generator</h3>
+            <input type="text" id="personName" placeholder="Name">
+            <input type="number" id="personAge" placeholder="Age">
+            <input type="text" id="personHobby" placeholder="Hobby">
+            <button onclick="generateBio()">Generate Bio</button>
+            <div id="bioOutput" style="margin-top: 10px; padding: 10px; background: #e3f2fd; border-radius: 4px;"></div>
+        </div>
+    </div>
+    
+    <!-- Advanced Examples Section -->
+    <div class="section">
+        <h2>5. Practical Examples</h2>
+        
+        <h3>Working with Arrays</h3>
+        <div class="code-block">
+let shoppingCart = [];
+let itemPrices = [12.99, 8.50, 23.75, 5.25];
+
+// Adding items to cart
+shoppingCart.push("T-shirt");
+shoppingCart.push("Book");
+shoppingCart.push("Headphones");
+
+console.log("Shopping cart:", shoppingCart);
+console.log("Cart length:", shoppingCart.length);
+
+// Calculate total price
+let total = 0;
+for (let i = 0; i < itemPrices.length; i++) {
+    total += itemPrices[i];
+}
+
+console.log(`Total price: $${total.toFixed(2)}`);
+        </div>
+        
+        <h3>Working with Objects</h3>
+        <div class="code-block">
+let student = {
+    firstName: "Sarah",
+    lastName: "Johnson",
+    age: 20,
+    courses: ["Math", "Physics", "Computer Science"],
+    isEnrolled: true,
+    
+    // Method (function inside object)
+    getFullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+// Accessing properties
+console.log("Student name:", student.getFullName());
+console.log("Courses:", student.courses.join(", "));
+
+// Adding new properties
+student.gpa = 3.8;
+student.graduationYear = 2024;
+
+console.log("Updated student:", student);
+        </div>
+        
+        <div class="interactive-demo">
+            <h3>Student Information System</h3>
+            <input type="text" id="studentName" placeholder="Student name">
+            <input type="number" id="studentGrade" placeholder="Grade (0-100)">
+            <button onclick="addStudent()">Add Student</button>
+            <button onclick="showStats()">Show Statistics</button>
+            <div id="studentOutput"></div>
+        </div>
+    </div>
+    
+    <!-- Console Output Display -->
+    <div class="section">
+        <h2>Console Output</h2>
+        <p>The JavaScript code on this page produces output in the browser console. <span class="highlight">Press F12 and look at the Console tab</span> to see all the results!</p>
+        <div class="output" id="consoleOutput">
+            <p><strong>Sample console output:</strong></p>
+            <p>User name: Bob</p>
+            <p>PI constant: 3.14159</p>
+            <p>String: string</p>
+            <p>Number: number</p>
+            <p>Boolean: boolean</p>
+        </div>
+    </div>
+    
+    <script>
+        // All the JavaScript code examples from above are executed here
+        console.log("=== JavaScript Basics Demo Started ===");
+        
+        // Variables and Constants
+        console.log("\n1. VARIABLES AND CONSTANTS");
+        let userName = "Alice";
+        const PI = 3.14159;
+        var oldStyle = "avoid this";
+        
+        userName = "Bob";
+        console.log("User name:", userName);
+        console.log("PI constant:", PI);
+        
+        // Data Types - Primitives
+        console.log("\n2. PRIMITIVE DATA TYPES");
+        let message = "Hello, World!";
+        let singleQuotes = 'Also a string';
+        let templateLiteral = `Template literal with ${message}`;
+        
+        let age = 25;
+        let price = 19.99;
+        let negative = -42;
+        
+        let isActive = true;
+        let isComplete = false;
+        
+        let undefinedVar;
+        let emptyValue = null;
+        
+        console.log("String:", typeof message);
+        console.log("Number:", typeof age);
+        console.log("Boolean:", typeof isActive);
+        console.log("Undefined:", typeof undefinedVar);
+        console.log("Null:", typeof emptyValue);
+        
+        // Reference Types
+        console.log("\n3. REFERENCE TYPES");
+        let fruits = ["apple", "banana", "orange"];
+        let numbers = [1, 2, 3, 4, 5];
+        let mixed = [1, "hello", true, null];
+        
+        let person = {
+            name: "John Doe",
+            age: 30,
+            city: "New York",
+            isEmployed: true
+        };
+        
+        console.log("First fruit:", fruits[0]);
+        console.log("Array length:", fruits.length);
+        console.log("Person name:", person.name);
+        console.log("Person age:", person["age"]);
+        
+        // Arithmetic Operators
+        console.log("\n4. ARITHMETIC OPERATORS");
+        let a = 10;
+        let b = 3;
+        
+        console.log("Addition:", a + b);
+        console.log("Subtraction:", a - b);
+        console.log("Multiplication:", a * b);
+        console.log("Division:", a / b);
+        console.log("Modulo:", a % b);
+        console.log("Exponentiation:", a ** b);
+        
+        let firstName = "John";
+        let lastName = "Doe";
+        let fullName = firstName + " " + lastName;
+        console.log("Full name:", fullName);
+        
+        // Comparison Operators
+        console.log("\n5. COMPARISON OPERATORS");
+        let x = 5;
+        let y = "5";
+        
+        console.log("x == y:", x == y);
+        console.log("x === y:", x === y);
+        console.log("x > 3:", x > 3);
+        console.log("x >= 5:", x >= 5);
+        
+        // Logical Operators
+        console.log("\n6. LOGICAL OPERATORS");
+        let isLoggedIn = true;
+        let hasPermission = false;
+        let isAdmin = true;
+        
+        console.log("Logged in AND has permission:", isLoggedIn && hasPermission);
+        console.log("Logged in AND is admin:", isLoggedIn && isAdmin);
+        console.log("Has permission OR is admin:", hasPermission || isAdmin);
+        console.log("NOT logged in:", !isLoggedIn);
+        
+        let canAccess = isLoggedIn && (hasPermission || isAdmin);
+        console.log("Can access:", canAccess);
+        
+        // Template Literals
+        console.log("\n7. TEMPLATE LITERALS");
+        let name = "Alice";
+        age = 28;
+        let city = "Boston";
+        
+        let oldMessage = "Hello, my name is " + name + " and I am " + age + " years old.";
+        let newMessage = `Hello, my name is ${name} and I am ${age} years old.`;
+        
+        let address = `
+    Name: ${name}
+    Age: ${age}
+    City: ${city}
+    Country: USA`;
+        
+        let calculation = `The sum of 5 and 3 is ${5 + 3}.`;
+        let comparison = `Is ${age} greater than 18? ${age > 18 ? 'Yes' : 'No'}`;
+        
+        console.log("Old message:", oldMessage);
+        console.log("New message:", newMessage);
+        console.log("Address:", address);
+        console.log("Calculation:", calculation);
+        console.log("Comparison:", comparison);
+        
+        // Array Example
+        console.log("\n8. ARRAY EXAMPLE");
+        let shoppingCart = [];
+        let itemPrices = [12.99, 8.50, 23.75, 5.25];
+        
+        shoppingCart.push("T-shirt");
+        shoppingCart.push("Book");
+        shoppingCart.push("Headphones");
+        
+        console.log("Shopping cart:", shoppingCart);
+        console.log("Cart length:", shoppingCart.length);
+        
+        let total = 0;
+        for (let i = 0; i < itemPrices.length; i++) {
+            total += itemPrices[i];
+        }
+        console.log(`Total price: $${total.toFixed(2)}`);
+        
+        // Object Example
+        console.log("\n9. OBJECT EXAMPLE");
+        let student = {
+            firstName: "Sarah",
+            lastName: "Johnson",
+            age: 20,
+            courses: ["Math", "Physics", "Computer Science"],
+            isEnrolled: true,
+            
+            getFullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        
+        console.log("Student name:", student.getFullName());
+        console.log("Courses:", student.courses.join(", "));
+        
+        student.gpa = 3.8;
+        student.graduationYear = 2024;
+        console.log("Updated student:", student);
+        
+        console.log("\n=== Demo Complete - Check the interactive sections above! ===");
+        
+        // Interactive Functions
+        function updateName() {
+            const input = document.getElementById('nameInput');
+            const output = document.getElementById('nameOutput');
+            const name = input.value || "Anonymous";
+            output.innerHTML = `<strong>let currentName = "${name}";</strong><br>Current name variable: ${name}`;
+            console.log("Name updated to:", name);
+        }
+        
+        function checkType() {
+            const input = document.getElementById('typeInput');
+            const output = document.getElementById('typeOutput');
+            let value = input.value;
+            
+            // Try to parse as number
+            if (!isNaN(value) && !isNaN(parseFloat(value)) && value !== '') {
+                value = parseFloat(value);
+            } else if (value === 'true') {
+                value = true;
+            } else if (value === 'false') {
+                value = false;
+            } else if (value === 'null') {
+                value = null;
+            } else if (value === 'undefined' || value === '') {
+                value = undefined;
+            }
+            
+            const type = typeof value;
+            output.innerHTML = `
+                <strong>Value:</strong> ${value}<br>
+                <strong>Type:</strong> ${type}<br>
+                <strong>Code:</strong> typeof ${JSON.stringify(value)} // ${type}
+            `;
+            console.log("Type check - Value:", value, "Type:", type);
+        }
+        
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value) || 0;
+            const operator = document.getElementById('operator').value;
+            const num2 = parseFloat(document.getElementById('num2').value) || 0;
+            const output = document.getElementById('calcOutput');
+            
+            let result;
+            switch(operator) {
+                case '+': result = num1 + num2; break;
+                case '-': result = num1 - num2; break;
+                case '*': result = num1 * num2; break;
+                case '/': result = num2 !== 0 ? num1 / num2 : 'Cannot divide by zero'; break;
+                case '%': result = num2 !== 0 ? num1 % num2 : 'Cannot modulo by zero'; break;
+                default: result = 'Unknown operator';
+            }
+            
+            output.innerHTML = `
+                <strong>Calculation:</strong> ${num1} ${operator} ${num2} = ${result}<br>
+                <strong>Code:</strong> let result = ${num1} ${operator} ${num2}; // ${result}
+            `;
+            console.log("Calculation:", num1, operator, num2, "=", result);
+        }
+        
+        function generateBio() {
+            const name = document.getElementById('personName').value || 'Anonymous';
+            const age = document.getElementById('personAge').value || 'unknown';
+            const hobby = document.getElementById('personHobby').value || 'reading';
+            const output = document.getElementById('bioOutput');
+            
+            const bio = `
+                <h4>Generated Biography</h4>
+                <p><strong>Template Literal Code:</strong></p>
+                <code>let bio = \`Hello! My name is \${name} and I am \${age} years old. I love \${hobby}!\`;</code>
+                <p><strong>Result:</strong></p>
+                <p>Hello! My name is ${name} and I am ${age} years old. I love ${hobby}!</p>
+            `;
+            
+            output.innerHTML = bio;
+            console.log("Generated bio for:", {name, age, hobby});
+        }
+        
+        // Student system for demonstration
+        let students = [];
+        
+        function addStudent() {
+            const name = document.getElementById('studentName').value || 'Anonymous';
+            const grade = parseFloat(document.getElementById('studentGrade').value) || 0;
+            
+            const student = {
+                name: name,
+                grade: grade,
+                passed: grade >= 60
+            };
+            
+            students.push(student);
+            updateStudentDisplay();
+            
+            // Clear inputs
+            document.getElementById('studentName').value = '';
+            document.getElementById('studentGrade').value = '';
+            
+            console.log("Added student:", student);
+        }
+        
+        function showStats() {
+            if (students.length === 0) {
+                alert('No students added yet!');
+                return;
+            }
+            
+            const totalGrades = students.reduce((sum, student) => sum + student.grade, 0);
+            const averageGrade = totalGrades / students.length;
+            const passedStudents = students.filter(student => student.passed).length;
+            
+            const stats = `
+                <h4>Class Statistics</h4>
+                <p><strong>Total Students:</strong> ${students.length}</p>
+                <p><strong>Average Grade:</strong> ${averageGrade.toFixed(2)}</p>
+                <p><strong>Students Passed:</strong> ${passedStudents} (${((passedStudents/students.length) * 100).toFixed(1)}%)</p>
+            `;
+            
+            document.getElementById('studentOutput').innerHTML = stats;
+            console.log("Class statistics:", {
+                total: students.length,
+                average: averageGrade,
+                passed: passedStudents
+            });
+        }
+        
+        function updateStudentDisplay() {
+            const output = document.getElementById('studentOutput');
+            if (students.length === 0) return;
+            
+            let html = '<h4>Students List</h4><ul>';
+            students.forEach(student => {
+                const status = student.passed ? '✅ Passed' : '❌ Failed';
+                html += `<li>${student.name}: ${student.grade}% ${status}</li>`;
+            });
+            html += '</ul>';
+            
+            output.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

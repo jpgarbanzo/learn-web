@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Ways to Include CSS</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="external-styles.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        /* Internal CSS - defined in the head section */
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .method-section {
+            margin: 40px 0;
+            padding: 20px;
+            border-left: 5px solid #2ecc71;
+            background-color: #f1f8ff;
+        }
+        
+        .method-section h2 {
+            color: #27ae60;
+            margin-top: 0;
+        }
+        
+        .pros-cons {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .pros, .cons {
+            flex: 1;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .pros {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        
+        .cons {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .code-example {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #6c757d;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        /* Styles that will be overridden by inline CSS */
+        .inline-example {
+            color: blue;
+            font-size: 16px;
+            padding: 10px;
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Three Ways to Include CSS</h1>
+        
+        <p class="highlight">
+            <strong>Important:</strong> This page demonstrates all three methods of including CSS. 
+            Notice how different methods affect the same elements and understand the cascade priority.
+        </p>
+        
+        <!-- External CSS Method -->
+        <section class="method-section">
+            <h2>1. External CSS</h2>
+            <p>Styles are written in separate <code>.css</code> files and linked to HTML documents.</p>
+            
+            <h3>How to Include:</h3>
+            <div class="code-example">
+&lt;!-- In the &lt;head&gt; section --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;link rel="stylesheet" href="theme.css"&gt;
+&lt;link rel="stylesheet" href="responsive.css"&gt;
+            </div>
+            
+            <h3>Example CSS File Content:</h3>
+            <div class="code-example">
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.navigation {
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+            </div>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>Most maintainable approach</li>
+                        <li>Reusable across multiple pages</li>
+                        <li>Separates content from presentation</li>
+                        <li>Cached by browsers for better performance</li>
+                        <li>Easy to collaborate on large projects</li>
+                        <li>Can be minified and optimized</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Requires additional HTTP request</li>
+                        <li>Must manage multiple files</li>
+                        <li>Potential for broken links</li>
+                        <li>May not load if connection fails</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="external-styled">This paragraph is styled using external CSS. Check the linked CSS file to see the styles!</p>
+        </section>
+        
+        <!-- Internal CSS Method -->
+        <section class="method-section">
+            <h2>2. Internal CSS</h2>
+            <p>Styles are defined within <code>&lt;style&gt;</code> tags in the HTML document's head section.</p>
+            
+            <h3>How to Include:</h3>
+            <div class="code-example">
+&lt;!-- In the &lt;head&gt; section --&gt;
+&lt;style&gt;
+    body {
+        background-color: #f0f0f0;
+        font-family: Georgia, serif;
+    }
+    
+    .special {
+        color: red;
+        font-weight: bold;
+    }
+    
+    #unique-element {
+        border: 2px solid blue;
+        padding: 15px;
+    }
+&lt;/style&gt;
+            </div>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>No additional HTTP requests</li>
+                        <li>Styles load with the HTML</li>
+                        <li>Good for page-specific styles</li>
+                        <li>Useful for testing and prototyping</li>
+                        <li>Can override external stylesheets</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Not reusable across pages</li>
+                        <li>Increases HTML file size</li>
+                        <li>Harder to maintain large stylesheets</li>
+                        <li>Mixes content with presentation</li>
+                        <li>No browser caching for styles</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p>Most of the styling on this page (including the layout, colors, and typography) comes from internal CSS defined in the head section.</p>
+        </section>
+        
+        <!-- Inline CSS Method -->
+        <section class="method-section">
+            <h2>3. Inline CSS</h2>
+            <p>Styles are applied directly to individual HTML elements using the <code>style</code> attribute.</p>
+            
+            <h3>How to Include:</h3>
+            <div class="code-example">
+&lt;!-- Directly on HTML elements --&gt;
+&lt;p style="color: red; font-size: 18px; margin: 10px;"&gt;
+    This paragraph has inline styling.
+&lt;/p&gt;
+
+&lt;div style="background: yellow; padding: 20px; border: 1px solid black;"&gt;
+    This div is styled inline.
+&lt;/div&gt;
+
+&lt;h2 style="text-align: center; color: #333; text-decoration: underline;"&gt;
+    Inline styled heading
+&lt;/h2&gt;
+            </div>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Pros:</h4>
+                    <ul>
+                        <li>Highest specificity (overrides other CSS)</li>
+                        <li>Quick for testing styles</li>
+                        <li>No need for selectors</li>
+                        <li>Useful for dynamic styling with JavaScript</li>
+                        <li>Email HTML templates often require inline styles</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h4>❌ Cons:</h4>
+                    <ul>
+                        <li>Very hard to maintain</li>
+                        <li>Not reusable</li>
+                        <li>Mixes content with presentation</li>
+                        <li>Increases HTML file size significantly</li>
+                        <li>Difficult to override (requires !important)</li>
+                        <li>Makes HTML less readable</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Inline CSS Examples:</h3>
+            <p style="color: #e74c3c; font-size: 20px; font-weight: bold; text-shadow: 1px 1px 2px #888; padding: 15px; background-color: #fadbd8; border: 2px dashed #c0392b; border-radius: 8px;">
+                This paragraph uses extensive inline CSS styling. Notice how it overrides any external or internal styles!
+            </p>
+            
+            <p class="inline-example" style="color: red; font-size: 24px; background-color: yellow; padding: 20px; border: 3px solid purple;">
+                This paragraph has both class-based styles (from internal CSS) and inline styles. 
+                The inline styles take precedence due to higher specificity.
+            </p>
+        </section>
+        
+        <!-- Comparison Section -->
+        <section class="method-section">
+            <h2>Comparison Summary</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Location</th>
+                        <th>Specificity</th>
+                        <th>Reusability</th>
+                        <th>Maintainability</th>
+                        <th>Best Used For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>External</strong></td>
+                        <td>Separate .css file</td>
+                        <td>Lowest</td>
+                        <td>High</td>
+                        <td>Excellent</td>
+                        <td>Production websites, multiple pages</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Internal</strong></td>
+                        <td>&lt;style&gt; in &lt;head&gt;</td>
+                        <td>Medium</td>
+                        <td>Low</td>
+                        <td>Good</td>
+                        <td>Page-specific styles, prototyping</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Inline</strong></td>
+                        <td>style attribute</td>
+                        <td>Highest</td>
+                        <td>None</td>
+                        <td>Poor</td>
+                        <td>Quick tests, email templates, dynamic styling</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Best Practices -->
+        <section class="method-section">
+            <h2>Best Practices</h2>
+            
+            <div class="highlight">
+                <h3>Recommended Approach:</h3>
+                <ol>
+                    <li><strong>Primary:</strong> Use external CSS files for most styling</li>
+                    <li><strong>Secondary:</strong> Use internal CSS for page-specific styles</li>
+                    <li><strong>Sparingly:</strong> Use inline CSS only for testing or dynamic styling</li>
+                </ol>
+            </div>
+            
+            <h3>Professional Workflow:</h3>
+            <ul>
+                <li>Start with external stylesheets for base styles</li>
+                <li>Add internal styles for page-specific modifications</li>
+                <li>Use inline styles only when necessary (JavaScript manipulation, email templates)</li>
+                <li>Organize CSS files logically (base.css, layout.css, components.css)</li>
+                <li>Use CSS preprocessors (Sass, Less) for advanced projects</li>
+                <li>Minify and optimize CSS files for production</li>
+            </ul>
+            
+            <h3>Loading Order and Cascade:</h3>
+            <p>CSS is processed in this order (later styles can override earlier ones):</p>
+            <ol>
+                <li>Browser default styles</li>
+                <li>External stylesheets (in order they're linked)</li>
+                <li>Internal styles</li>
+                <li>Inline styles</li>
+            </ol>
+        </section>
+        
+        <footer style="margin-top: 50px; padding: 20px; background-color: #6c757d; color: white; text-align: center; border-radius: 5px;">
+            <p><strong>Remember:</strong> Choose the right method for your specific needs, but generally favor external CSS for maintainable, professional websites!</p>
+        </footer>
+    </div>
+</body>
+</html>

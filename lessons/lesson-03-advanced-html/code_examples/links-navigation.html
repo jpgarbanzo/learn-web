@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Links and Navigation Examples</title>
+</head>
+<body>
+    <h1>HTML Links and Navigation</h1>
+    
+    <!-- Navigation Menu -->
+    <nav>
+        <h2>Site Navigation</h2>
+        <ul>
+            <li><a href="#internal-links">Internal Links</a></li>
+            <li><a href="#external-links">External Links</a></li>
+            <li><a href="#special-links">Special Links</a></li>
+            <li><a href="#link-attributes">Link Attributes</a></li>
+        </ul>
+    </nav>
+    
+    <hr>
+    
+    <!-- Internal Links Section -->
+    <section id="internal-links">
+        <h2>Internal Links (Same Page)</h2>
+        <p>Internal links help users navigate within the same page or to other pages on your website.</p>
+        
+        <h3>Links to Sections on Same Page</h3>
+        <ul>
+            <li><a href="#top">Back to Top</a></li>
+            <li><a href="#external-links">Jump to External Links Section</a></li>
+            <li><a href="#link-attributes">Jump to Link Attributes Section</a></li>
+        </ul>
+        
+        <h3>Links to Other Pages (Relative Paths)</h3>
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="../lesson-02-html-structure/README.md">Previous Lesson</a></li>
+            <li><a href="./images/portfolio.html">Portfolio Page</a> (if it existed)</li>
+            <li><a href="/about.html">About Page</a> (root-relative path)</li>
+        </ul>
+    </section>
+    
+    <hr>
+    
+    <!-- External Links Section -->
+    <section id="external-links">
+        <h2>External Links</h2>
+        <p>External links point to resources on other websites. Always include the full URL.</p>
+        
+        <h3>Educational Resources</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Documentation</a></li>
+            <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a></li>
+            <li><a href="https://validator.w3.org/" target="_blank">HTML Validator</a></li>
+        </ul>
+        
+        <h3>Social Media Links</h3>
+        <ul>
+            <li><a href="https://github.com/username" target="_blank" rel="noopener">GitHub Profile</a></li>
+            <li><a href="https://linkedin.com/in/username" target="_blank" rel="noopener">LinkedIn Profile</a></li>
+            <li><a href="https://twitter.com/username" target="_blank" rel="noopener">Twitter Profile</a></li>
+        </ul>
+        
+        <p><strong>Note:</strong> External links often use <code>target="_blank"</code> to open in new tabs and <code>rel="noopener"</code> for security.</p>
+    </section>
+    
+    <hr>
+    
+    <!-- Special Links Section -->
+    <section id="special-links">
+        <h2>Special Link Types</h2>
+        
+        <h3>Email Links</h3>
+        <p>Create links that open the user's email client:</p>
+        <ul>
+            <li><a href="mailto:contact@example.com">Simple Email Link</a></li>
+            <li><a href="mailto:contact@example.com?subject=Hello&body=Hi there!">Email with Subject and Body</a></li>
+            <li><a href="mailto:contact@example.com?cc=manager@example.com&bcc=admin@example.com">Email with CC and BCC</a></li>
+        </ul>
+        
+        <h3>Phone Links</h3>
+        <p>Create links that can dial phone numbers on mobile devices:</p>
+        <ul>
+            <li><a href="tel:+1234567890">Call +1 (234) 567-8900</a></li>
+            <li><a href="tel:+1234567890">Local Business</a></li>
+        </ul>
+        
+        <h3>SMS Links</h3>
+        <p>Links that open SMS/text messaging apps:</p>
+        <ul>
+            <li><a href="sms:+1234567890">Send SMS to +1 (234) 567-8900</a></li>
+            <li><a href="sms:+1234567890?body=Hello%20there!">SMS with Pre-filled Message</a></li>
+        </ul>
+        
+        <h3>Download Links</h3>
+        <p>Links to files that will be downloaded:</p>
+        <ul>
+            <li><a href="files/resume.pdf" download>Download Resume (PDF)</a></li>
+            <li><a href="files/portfolio.zip" download="my-portfolio.zip">Download Portfolio</a></li>
+        </ul>
+    </section>
+    
+    <hr>
+    
+    <!-- Link Attributes Section -->
+    <section id="link-attributes">
+        <h2>Link Attributes and Best Practices</h2>
+        
+        <h3>Target Attribute</h3>
+        <ul>
+            <li><a href="https://example.com">Default - Same Window</a></li>
+            <li><a href="https://example.com" target="_blank">New Window/Tab</a></li>
+            <li><a href="https://example.com" target="_self">Same Window (Explicit)</a></li>
+        </ul>
+        
+        <h3>Title Attribute (Tooltips)</h3>
+        <ul>
+            <li><a href="https://github.com" title="Visit GitHub - Version Control Platform">GitHub</a> (hover for tooltip)</li>
+            <li><a href="mailto:contact@example.com" title="Send us an email">Contact Us</a></li>
+        </ul>
+        
+        <h3>Rel Attribute (Relationship)</h3>
+        <ul>
+            <li><a href="https://example.com" rel="noopener" target="_blank">Secure External Link</a></li>
+            <li><a href="https://example.com" rel="nofollow" target="_blank">Untrusted External Link</a></li>
+            <li><a href="next-page.html" rel="next">Next Page in Series</a></li>
+            <li><a href="prev-page.html" rel="prev">Previous Page in Series</a></li>
+        </ul>
+        
+        <h3>Accessibility Best Practices</h3>
+        <div>
+            <h4>Good Link Text Examples:</h4>
+            <ul>
+                <li><a href="https://example.com/contact">Contact our customer service team</a></li>
+                <li><a href="report.pdf">Download the annual report (PDF, 2.3MB)</a></li>
+                <li><a href="https://example.com" target="_blank">Example.com (opens in new window)</a></li>
+            </ul>
+            
+            <h4>Poor Link Text Examples (Avoid These):</h4>
+            <ul>
+                <li>Click <a href="https://example.com">here</a> for more information</li>
+                <li><a href="report.pdf">Click here</a> to download</li>
+                <li>Visit our website at <a href="https://example.com">https://example.com</a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <hr>
+    
+    <!-- Back to top link -->
+    <p><a href="#top" id="back-to-top">↑ Back to Top</a></p>
+    
+    <footer>
+        <p><strong>Remember:</strong> Good link text describes the destination or action, not just "click here"!</p>
+    </footer>
+</body>
+</html>

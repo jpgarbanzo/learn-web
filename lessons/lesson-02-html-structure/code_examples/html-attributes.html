@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes Examples</title>
+</head>
+<body>
+    <!-- Element with id attribute (unique identifier) -->
+    <h1 id="main-title">HTML Attributes Demonstration</h1>
+    
+    <!-- Element with class attribute (for styling grouping) -->
+    <p class="intro-text">This page demonstrates common HTML attributes and their usage.</p>
+    
+    <!-- Multiple classes can be applied to a single element -->
+    <p class="highlight important">This paragraph has multiple CSS classes applied.</p>
+    
+    <!-- Title attribute provides tooltip on hover -->
+    <h2 title="This is a tooltip that appears on hover">Global Attributes</h2>
+    
+    <!-- Elements with both id and class attributes -->
+    <div id="content-section" class="main-content">
+        <h3>Common Global Attributes</h3>
+        
+        <p><strong>id</strong> - Unique identifier for the element:</p>
+        <p id="unique-paragraph">This paragraph has a unique ID.</p>
+        
+        <p><strong>class</strong> - Groups elements for styling:</p>
+        <p class="styled-text">This paragraph belongs to a CSS class.</p>
+        <p class="styled-text">This paragraph belongs to the same CSS class.</p>
+        
+        <p><strong>title</strong> - Tooltip text:</p>
+        <p title="I'm a helpful tooltip!">Hover over this text to see the tooltip.</p>
+        
+        <p><strong>lang</strong> - Language of content:</p>
+        <p lang="es" title="This text is in Spanish">Hola, mundo!</p>
+        <p lang="fr" title="This text is in French">Bonjour le monde!</p>
+    </div>
+    
+    <!-- Nested elements with attributes -->
+    <section id="examples-section" class="examples">
+        <h3>Attribute Best Practices</h3>
+        
+        <div class="tip-box" title="Important information">
+            <h4 id="naming-conventions">Naming Conventions</h4>
+            <ul>
+                <li class="tip-item">Use descriptive, meaningful names for IDs and classes</li>
+                <li class="tip-item">Use kebab-case (hyphens) for multi-word names</li>
+                <li class="tip-item">Keep names concise but clear</li>
+                <li class="tip-item">Avoid using spaces in attribute values (use quotes if needed)</li>
+            </ul>
+        </div>
+        
+        <div class="example-box" id="code-example">
+            <h4>Example with Multiple Attributes</h4>
+            <p class="code-sample" lang="en" title="This shows proper attribute usage">
+                &lt;div id="main-content" class="container highlight" title="Main content area"&gt;
+            </p>
+        </div>
+    </section>
+    
+    <!-- Empty elements can also have attributes -->
+    <hr class="section-divider" title="Section separator">
+    
+    <!-- Footer section with attributes -->
+    <footer id="page-footer" class="footer-content">
+        <p class="footer-text">Remember: Attributes provide additional information about HTML elements and are essential for CSS styling and JavaScript interaction.</p>
+    </footer>
+</body>
+</html>

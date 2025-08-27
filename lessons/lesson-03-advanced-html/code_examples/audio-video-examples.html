@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Audio and Video Examples</title>
+</head>
+<body>
+    <h1>HTML Audio and Video Elements</h1>
+    
+    <!-- Audio Examples -->
+    <section id="audio-examples">
+        <h2>HTML Audio Element</h2>
+        
+        <h3>Basic Audio with Controls</h3>
+        <p>The simplest way to embed audio with user controls:</p>
+        <audio controls>
+            <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+            <source src="audio/sample.mp3" type="audio/mpeg">
+            <source src="audio/sample.ogg" type="audio/ogg">
+            Your browser does not support the audio element. 
+            <a href="audio/sample.mp3">Download the audio file</a> instead.
+        </audio>
+        
+        <h3>Audio with All Attributes</h3>
+        <p>Audio element with multiple attributes for different behaviors:</p>
+        <audio controls preload="auto" loop>
+            <source src="audio/background-music.mp3" type="audio/mpeg">
+            <source src="audio/background-music.ogg" type="audio/ogg">
+            Your browser doesn't support HTML5 audio. 
+            Here's a <a href="audio/background-music.mp3">direct link to the audio file</a>.
+        </audio>
+        
+        <h3>Auto-play Audio (Use Sparingly!)</h3>
+        <p><strong>Warning:</strong> Auto-play can be disruptive. Most browsers block it unless muted.</p>
+        <audio controls autoplay muted>
+            <source src="audio/notification.mp3" type="audio/mpeg">
+            <p>Your browser doesn't support audio playback.</p>
+        </audio>
+        
+        <h3>Audio Attributes Explanation</h3>
+        <dl>
+            <dt><code>controls</code></dt>
+            <dd>Displays play/pause button, volume control, and progress bar</dd>
+            
+            <dt><code>autoplay</code></dt>
+            <dd>Automatically starts playing when page loads (often blocked by browsers)</dd>
+            
+            <dt><code>loop</code></dt>
+            <dd>Repeats the audio file continuously</dd>
+            
+            <dt><code>muted</code></dt>
+            <dd>Starts the audio muted (required for autoplay in most browsers)</dd>
+            
+            <dt><code>preload</code></dt>
+            <dd>
+                <ul>
+                    <li><code>auto</code> - Download entire file when page loads</li>
+                    <li><code>metadata</code> - Only download file info (duration, etc.)</li>
+                    <li><code>none</code> - Don't download anything until user plays</li>
+                </ul>
+            </dd>
+        </dl>
+    </section>
+    
+    <hr>
+    
+    <!-- Video Examples -->
+    <section id="video-examples">
+        <h2>HTML Video Element</h2>
+        
+        <h3>Basic Video with Controls</h3>
+        <p>Standard video player with user controls:</p>
+        <video width="400" height="300" controls>
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+            <source src="video/demo.webm" type="video/webm">
+            <source src="video/demo.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+            <a href="video/demo.mp4">Download the video</a> to watch it locally.
+        </video>
+        
+        <h3>Video with Poster Image</h3>
+        <p>Video showing a thumbnail before playing:</p>
+        <video width="400" height="300" controls poster="https://via.placeholder.com/400x300/333/white?text=Video+Thumbnail">
+            <source src="video/presentation.mp4" type="video/mp4">
+            <source src="video/presentation.webm" type="video/webm">
+            <p>
+                Your browser doesn't support HTML5 video. 
+                <a href="video/presentation.mp4">Download the video</a> instead.
+            </p>
+        </video>
+        
+        <h3>Responsive Video</h3>
+        <p>Video that scales with container width:</p>
+        <div style="max-width: 600px; border: 1px solid #ccc; padding: 10px;">
+            <video width="100%" height="auto" controls>
+                <source src="video/responsive-demo.mp4" type="video/mp4">
+                <source src="video/responsive-demo.webm" type="video/webm">
+                <p>This browser doesn't support HTML5 video.</p>
+            </video>
+        </div>
+        
+        <h3>Video Attributes Explanation</h3>
+        <dl>
+            <dt><code>width</code> and <code>height</code></dt>
+            <dd>Set the video player dimensions in pixels</dd>
+            
+            <dt><code>controls</code></dt>
+            <dd>Shows play/pause, volume, timeline, and fullscreen controls</dd>
+            
+            <dt><code>poster</code></dt>
+            <dd>Image to display before video starts playing</dd>
+            
+            <dt><code>autoplay</code></dt>
+            <dd>Auto-starts video (usually requires muted attribute)</dd>
+            
+            <dt><code>muted</code></dt>
+            <dd>Starts video without sound (enables autoplay in most browsers)</dd>
+            
+            <dt><code>loop</code></dt>
+            <dd>Continuously replays the video</dd>
+            
+            <dt><code>playsinline</code></dt>
+            <dd>Prevents fullscreen playback on mobile devices</dd>
+        </dl>
+    </section>
+    
+    <hr>
+    
+    <!-- Multiple Sources and Fallbacks -->
+    <section id="multiple-sources">
+        <h2>Multiple Sources and Browser Support</h2>
+        
+        <h3>Why Multiple Formats?</h3>
+        <p>Different browsers support different media formats. Providing multiple sources ensures maximum compatibility.</p>
+        
+        <h4>Common Audio Formats:</h4>
+        <ul>
+            <li><strong>MP3</strong> - Widely supported, good compression</li>
+            <li><strong>OGG</strong> - Open source, good quality</li>
+            <li><strong>WAV</strong> - Uncompressed, best quality but large files</li>
+        </ul>
+        
+        <h4>Common Video Formats:</h4>
+        <ul>
+            <li><strong>MP4 (H.264)</strong> - Most widely supported</li>
+            <li><strong>WebM</strong> - Open source, smaller files</li>
+            <li><strong>OGV</strong> - Open source alternative</li>
+        </ul>
+        
+        <h3>Fallback Content</h3>
+        <p>Always provide fallback content for unsupported browsers:</p>
+        <video controls width="400" height="300">
+            <source src="video/demo.mp4" type="video/mp4">
+            <source src="video/demo.webm" type="video/webm">
+            
+            <!-- Fallback for browsers without video support -->
+            <p>
+                Your browser doesn't support HTML5 video. 
+                <a href="video/demo.mp4">Download MP4</a> or 
+                <a href="video/demo.webm">Download WebM</a> to watch locally.
+            </p>
+        </video>
+    </section>
+    
+    <hr>
+    
+    <!-- Accessibility and Best Practices -->
+    <section id="accessibility-best-practices">
+        <h2>Accessibility and Best Practices</h2>
+        
+        <h3>Captions and Transcripts</h3>
+        <p>For accessibility, provide captions using the track element:</p>
+        <video controls width="400" height="300">
+            <source src="video/tutorial.mp4" type="video/mp4">
+            <track kind="subtitles" src="captions/tutorial-en.vtt" srclang="en" label="English">
+            <track kind="subtitles" src="captions/tutorial-es.vtt" srclang="es" label="Spanish">
+            <track kind="descriptions" src="captions/tutorial-desc.vtt" srclang="en" label="Audio Description">
+        </video>
+        
+        <h3>Audio Transcript Example</h3>
+        <audio controls>
+            <source src="audio/interview.mp3" type="audio/mpeg">
+            <p>Your browser doesn't support audio playback.</p>
+        </audio>
+        <details>
+            <summary>Audio Transcript</summary>
+            <p>
+                <strong>Interviewer:</strong> Can you tell us about your experience with web development?<br>
+                <strong>Developer:</strong> I've been working with HTML, CSS, and JavaScript for over five years...
+                <em>[Full transcript would continue here]</em>
+            </p>
+        </details>
+        
+        <h3>Performance Best Practices</h3>
+        <ul>
+            <li><strong>File Size:</strong> Optimize media files for web delivery</li>
+            <li><strong>Preload Strategy:</strong> Use appropriate preload settings
+                <ul>
+                    <li><code>preload="none"</code> - For background or optional content</li>
+                    <li><code>preload="metadata"</code> - For content users might play</li>
+                    <li><code>preload="auto"</code> - For content users will likely play</li>
+                </ul>
+            </li>
+            <li><strong>Responsive Design:</strong> Use percentage widths and max-width</li>
+            <li><strong>Loading States:</strong> Provide poster images and fallback content</li>
+        </ul>
+        
+        <h3>User Experience Guidelines</h3>
+        <ul>
+            <li><strong>Avoid Autoplay:</strong> Let users control when media plays</li>
+            <li><strong>Provide Controls:</strong> Always include controls attribute</li>
+            <li><strong>Consider Data Usage:</strong> Large files impact mobile users</li>
+            <li><strong>Test Across Devices:</strong> Ensure compatibility on mobile and desktop</li>
+        </ul>
+    </section>
+    
+    <hr>
+    
+    <!-- Embedded Media Alternatives -->
+    <section id="embedded-alternatives">
+        <h2>Embedded Media Alternatives</h2>
+        
+        <h3>YouTube Embed</h3>
+        <p>Sometimes it's better to embed from video platforms:</p>
+        <iframe width="400" height="300" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+        
+        <h3>Audio Platform Embeds</h3>
+        <p>Embed from audio platforms like SoundCloud, Spotify, etc.:</p>
+        <!-- Placeholder for audio embed -->
+        <div style="border: 1px solid #ccc; padding: 20px; text-align: center; background: #f5f5f5;">
+            <p>[SoundCloud or Spotify embed would go here]</p>
+            <p>Use platform-provided embed codes for hosted content</p>
+        </div>
+        
+        <h3>When to Use Each Approach</h3>
+        <ul>
+            <li><strong>HTML5 Audio/Video:</strong> For content you host and control</li>
+            <li><strong>Platform Embeds:</strong> For content hosted on YouTube, Vimeo, etc.</li>
+            <li><strong>Consider:</strong> Bandwidth, control, analytics, and user experience</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p><strong>Remember:</strong> Always consider accessibility, performance, and user experience when adding multimedia content to your web pages!</p>
+    </footer>
+</body>
+</html>
