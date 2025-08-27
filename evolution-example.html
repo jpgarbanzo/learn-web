@@ -537,12 +537,12 @@ form.<span class="function">addEventListener</span>(<span class="string">'submit
         // Prevent default form submissions for stages 1 and 2
         document.getElementById('stage1-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Plain HTML form - normally this would reload the page!');
+            // Do nothing - demonstrate no JavaScript behavior
         });
         
         document.getElementById('stage2-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Styled form - looks better but still needs JavaScript for interactivity!');
+            // Do nothing - demonstrate styling without interactivity
         });
         
         // Stage 3 JavaScript implementation
