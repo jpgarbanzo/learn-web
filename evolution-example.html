@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML → CSS → JavaScript Evolution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .evolution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .stage {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .stage:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stage-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+        
+        .stage-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 15px;
+        }
+        
+        .stage-title {
+            flex: 1;
+        }
+        
+        .stage-title h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .stage-title p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .demo-area {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .code-section {
+            margin-top: 20px;
+        }
+        
+        .code-header {
+            background: #2d3748;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px 8px 0 0;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copy-btn {
+            background: #4a5568;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: #667eea;
+        }
+        
+        .code-content {
+            background: #1a202c;
+            padding: 20px;
+            border-radius: 0 0 8px 8px;
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .code-content pre {
+            color: #e2e8f0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        /* Syntax highlighting */
+        .tag { color: #fc929e; }
+        .attr { color: #79c0ff; }
+        .string { color: #a5d6ff; }
+        .selector { color: #d2a8ff; }
+        .property { color: #79dac8; }
+        .value { color: #ff9ac1; }
+        .keyword { color: #ff7b72; }
+        .function { color: #d2a8ff; }
+        .comment { color: #8b949e; font-style: italic; }
+        
+        /* Stage 1: Plain HTML */
+        #stage1-form input[type="text"] {
+            /* No styling - browser defaults */
+        }
+        
+        #stage1-form button {
+            /* No styling - browser defaults */
+        }
+        
+        /* Stage 2: With CSS */
+        .styled-form {
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+        }
+        
+        .styled-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .styled-input:focus {
+            outline: none;
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .styled-button {
+            padding: 12px 24px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .styled-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            background: #f0f0f0;
+        }
+        
+        .styled-button:active {
+            transform: translateY(0);
+        }
+        
+        /* Stage 3: Additional styles for JavaScript version */
+        .js-form {
+            position: relative;
+        }
+        
+        .output-message {
+            margin-top: 15px;
+            padding: 12px;
+            background: #10b981;
+            color: white;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+        
+        .output-message.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .info-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .info-box h3 {
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+        
+        .info-box p {
+            color: #1e3a8a;
+            line-height: 1.6;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            padding: 8px 0;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 The Evolution of Web Development: HTML → CSS → JavaScript</h1>
+        
+        <div class="evolution-grid">
+            <!-- Stage 1: Plain HTML -->
+            <div class="stage">
+                <div class="stage-header">
+                    <div class="stage-number">1</div>
+                    <div class="stage-title">
+                        <h2>Plain HTML</h2>
+                        <p>Structure only - no styling or interactivity</p>
+                    </div>
+                </div>
+                
+                <div class="demo-area">
+                    <form id="stage1-form">
+                        <input type="text" placeholder="Enter your name">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                
+                <div class="info-box">
+                    <h3>What you see:</h3>
+                    <p>Browser default styling - functional but not attractive</p>
+                </div>
+                
+                <ul class="features-list">
+                    <li>Basic form structure</li>
+                    <li>Default browser styles</li>
+                    <li>No custom appearance</li>
+                    <li>Form submission reloads page</li>
+                </ul>
+                
+                <div class="code-section">
+                    <div class="code-header">
+                        <span>HTML Code</span>
+                        <button class="copy-btn" onclick="copyCode('html-code')">Copy</button>
+                    </div>
+                    <div class="code-content">
+                        <pre id="html-code"><span class="tag">&lt;form&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"Enter your name"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="string">"submit"</span><span class="tag">&gt;</span>Submit<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stage 2: HTML + CSS -->
+            <div class="stage">
+                <div class="stage-header">
+                    <div class="stage-number">2</div>
+                    <div class="stage-title">
+                        <h2>HTML + CSS</h2>
+                        <p>Structure + visual design</p>
+                    </div>
+                </div>
+                
+                <div class="demo-area">
+                    <form class="styled-form" id="stage2-form">
+                        <input type="text" class="styled-input" placeholder="Enter your name">
+                        <button type="submit" class="styled-button">Submit</button>
+                    </form>
+                </div>
+                
+                <div class="info-box">
+                    <h3>What's added:</h3>
+                    <p>Custom styling with CSS - modern, attractive appearance</p>
+                </div>
+                
+                <ul class="features-list">
+                    <li>Custom colors and gradients</li>
+                    <li>Rounded corners and shadows</li>
+                    <li>Hover effects and transitions</li>
+                    <li>Responsive layout with flexbox</li>
+                </ul>
+                
+                <div class="code-section">
+                    <div class="code-header">
+                        <span>HTML Code</span>
+                        <button class="copy-btn" onclick="copyCode('html-css-code')">Copy</button>
+                    </div>
+                    <div class="code-content">
+                        <pre id="html-css-code"><span class="tag">&lt;form</span> <span class="attr">class</span>=<span class="string">"styled-form"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"styled-input"</span> <span class="attr">placeholder</span>=<span class="string">"Enter your name"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"styled-button"</span><span class="tag">&gt;</span>Submit<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></pre>
+                    </div>
+                </div>
+                
+                <div class="code-section">
+                    <div class="code-header">
+                        <span>CSS Code</span>
+                        <button class="copy-btn" onclick="copyCode('css-code')">Copy</button>
+                    </div>
+                    <div class="code-content">
+                        <pre id="css-code"><span class="selector">.styled-form</span> {
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">gap</span>: <span class="value">10px</span>;
+    <span class="property">padding</span>: <span class="value">20px</span>;
+    <span class="property">background</span>: <span class="value">linear-gradient(135deg, #667eea 0%, #764ba2 100%)</span>;
+    <span class="property">border-radius</span>: <span class="value">8px</span>;
+}
+
+<span class="selector">.styled-input</span> {
+    <span class="property">flex</span>: <span class="value">1</span>;
+    <span class="property">padding</span>: <span class="value">12px 16px</span>;
+    <span class="property">border</span>: <span class="value">2px solid transparent</span>;
+    <span class="property">border-radius</span>: <span class="value">8px</span>;
+    <span class="property">font-size</span>: <span class="value">16px</span>;
+    <span class="property">background</span>: <span class="value">white</span>;
+    <span class="property">transition</span>: <span class="value">all 0.3s ease</span>;
+    <span class="property">box-shadow</span>: <span class="value">0 2px 10px rgba(0,0,0,0.1)</span>;
+}
+
+<span class="selector">.styled-input:focus</span> {
+    <span class="property">outline</span>: <span class="value">none</span>;
+    <span class="property">border-color</span>: <span class="value">#667eea</span>;
+    <span class="property">transform</span>: <span class="value">translateY(-2px)</span>;
+    <span class="property">box-shadow</span>: <span class="value">0 4px 20px rgba(102, 126, 234, 0.4)</span>;
+}
+
+<span class="selector">.styled-button</span> {
+    <span class="property">padding</span>: <span class="value">12px 24px</span>;
+    <span class="property">background</span>: <span class="value">white</span>;
+    <span class="property">color</span>: <span class="value">#667eea</span>;
+    <span class="property">border</span>: <span class="value">none</span>;
+    <span class="property">border-radius</span>: <span class="value">8px</span>;
+    <span class="property">font-size</span>: <span class="value">16px</span>;
+    <span class="property">font-weight</span>: <span class="value">bold</span>;
+    <span class="property">cursor</span>: <span class="value">pointer</span>;
+    <span class="property">transition</span>: <span class="value">all 0.3s ease</span>;
+}
+
+<span class="selector">.styled-button:hover</span> {
+    <span class="property">transform</span>: <span class="value">translateY(-2px)</span>;
+    <span class="property">box-shadow</span>: <span class="value">0 4px 20px rgba(0,0,0,0.2)</span>;
+}</pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stage 3: HTML + CSS + JavaScript -->
+            <div class="stage">
+                <div class="stage-header">
+                    <div class="stage-number">3</div>
+                    <div class="stage-title">
+                        <h2>HTML + CSS + JavaScript</h2>
+                        <p>Structure + design + interactivity</p>
+                    </div>
+                </div>
+                
+                <div class="demo-area">
+                    <form class="styled-form js-form" id="stage3-form">
+                        <input type="text" class="styled-input" id="nameInput" placeholder="Enter your name">
+                        <button type="submit" class="styled-button">Submit</button>
+                    </form>
+                    <div class="output-message" id="outputMessage"></div>
+                </div>
+                
+                <div class="info-box">
+                    <h3>What's added:</h3>
+                    <p>JavaScript for dynamic behavior - no page reload!</p>
+                </div>
+                
+                <ul class="features-list">
+                    <li>Form submission without reload</li>
+                    <li>Input validation</li>
+                    <li>Dynamic feedback messages</li>
+                    <li>Interactive user experience</li>
+                </ul>
+                
+                <div class="code-section">
+                    <div class="code-header">
+                        <span>HTML Code</span>
+                        <button class="copy-btn" onclick="copyCode('html-js-code')">Copy</button>
+                    </div>
+                    <div class="code-content">
+                        <pre id="html-js-code"><span class="tag">&lt;form</span> <span class="attr">class</span>=<span class="string">"styled-form js-form"</span> <span class="attr">id</span>=<span class="string">"myForm"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"styled-input"</span> <span class="attr">id</span>=<span class="string">"nameInput"</span> <span class="attr">placeholder</span>=<span class="string">"Enter your name"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"styled-button"</span><span class="tag">&gt;</span>Submit<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"output-message"</span> <span class="attr">id</span>=<span class="string">"outputMessage"</span><span class="tag">&gt;&lt;/div&gt;</span></pre>
+                    </div>
+                </div>
+                
+                <div class="code-section">
+                    <div class="code-header">
+                        <span>JavaScript Code</span>
+                        <button class="copy-btn" onclick="copyCode('js-code')">Copy</button>
+                    </div>
+                    <div class="code-content">
+                        <pre id="js-code"><span class="comment">// Get references to form elements</span>
+<span class="keyword">const</span> form = document.<span class="function">getElementById</span>(<span class="string">'myForm'</span>);
+<span class="keyword">const</span> input = document.<span class="function">getElementById</span>(<span class="string">'nameInput'</span>);
+<span class="keyword">const</span> output = document.<span class="function">getElementById</span>(<span class="string">'outputMessage'</span>);
+
+<span class="comment">// Add event listener for form submission</span>
+form.<span class="function">addEventListener</span>(<span class="string">'submit'</span>, <span class="keyword">function</span>(event) {
+    <span class="comment">// Prevent default form submission (page reload)</span>
+    event.<span class="function">preventDefault</span>();
+    
+    <span class="comment">// Get the input value</span>
+    <span class="keyword">const</span> name = input.value.<span class="function">trim</span>();
+    
+    <span class="comment">// Validate input</span>
+    <span class="keyword">if</span> (name === <span class="string">''</span>) {
+        <span class="function">alert</span>(<span class="string">'Please enter your name!'</span>);
+        <span class="keyword">return</span>;
+    }
+    
+    <span class="comment">// Display personalized message</span>
+    <span class="function">alert</span>(<span class="string">`Hello, ${name}! Welcome to interactive web development!`</span>);
+    
+    <span class="comment">// Show success message below form</span>
+    output.textContent = <span class="string">`✨ Form submitted successfully for: ${name}`</span>;
+    output.classList.<span class="function">add</span>(<span class="string">'show'</span>);
+    
+    <span class="comment">// Clear the input field</span>
+    input.value = <span class="string">''</span>;
+    
+    <span class="comment">// Hide message after 3 seconds</span>
+    <span class="function">setTimeout</span>(() => {
+        output.classList.<span class="function">remove</span>(<span class="string">'show'</span>);
+    }, <span class="value">3000</span>);
+});</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: white; padding: 30px; border-radius: 12px; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <h2 style="color: #333; margin-bottom: 20px;">🎯 Key Takeaways</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="info-box">
+                    <h3>HTML (Structure)</h3>
+                    <p>Provides the content and semantic structure of the web page. It's the foundation that search engines and screen readers understand.</p>
+                </div>
+                <div class="info-box" style="border-color: #a855f7; background: #faf5ff;">
+                    <h3 style="color: #7c3aed;">CSS (Presentation)</h3>
+                    <p style="color: #6b21a8;">Controls how the content looks - colors, layout, typography, animations. Makes the web beautiful and user-friendly.</p>
+                </div>
+                <div class="info-box" style="border-color: #eab308; background: #fefce8;">
+                    <h3 style="color: #ca8a04;">JavaScript (Behavior)</h3>
+                    <p style="color: #a16207;">Adds interactivity and dynamic behavior. Handles user input, manipulates content, and communicates with servers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Prevent default form submissions for stages 1 and 2
+        document.getElementById('stage1-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Plain HTML form - normally this would reload the page!');
+        });
+        
+        document.getElementById('stage2-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Styled form - looks better but still needs JavaScript for interactivity!');
+        });
+        
+        // Stage 3 JavaScript implementation
+        const form = document.getElementById('stage3-form');
+        const input = document.getElementById('nameInput');
+        const output = document.getElementById('outputMessage');
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = input.value.trim();
+            
+            if (name === '') {
+                alert('Please enter your name!');
+                return;
+            }
+            
+            alert(`Hello, ${name}! Welcome to interactive web development!`);
+            
+            output.textContent = `✨ Form submitted successfully for: ${name}`;
+            output.classList.add('show');
+            
+            input.value = '';
+            
+            setTimeout(() => {
+                output.classList.remove('show');
+            }, 3000);
+        });
+        
+        // Copy code function
+        function copyCode(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const textToCopy = codeElement.textContent;
+            
+            navigator.clipboard.writeText(textToCopy).then(function() {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy code. Please try selecting and copying manually.');
+            });
+        }
+        
+        // Add interactive console messages
+        console.log('%c🎉 Welcome to the Evolution Example!', 'font-size: 20px; color: #667eea; font-weight: bold;');
+        console.log('%cOpen DevTools to see how HTML, CSS, and JavaScript work together!', 'font-size: 14px; color: #764ba2;');
+        console.log('\n📚 Quick Guide:');
+        console.log('1. HTML provides structure');
+        console.log('2. CSS adds visual design');
+        console.log('3. JavaScript enables interactivity');
+    </script>
+</body>
+</html>

@@ -45,10 +45,27 @@ This repository contains **12 comprehensive lessons** progressing from fundament
 - Solutions folder provides reference implementations
 - Exercises are designed for both individual and group work
 
+## 🚀 Quick Start with GitHub Codespaces
+
+**No installation required!** Start coding immediately in your browser:
+
+1. Click the green **"Code"** button above
+2. Select **"Codespaces"** tab  
+3. Click **"Create codespace on main"**
+4. Your cloud development environment will be ready in ~30 seconds!
+
+Once in Codespaces:
+- Open `evolution-example.html` with Live Server to see HTML → CSS → JavaScript progression
+- All development tools are pre-configured
+- See [CODESPACES_SETUP.md](CODESPACES_SETUP.md) for detailed instructions
+
 ## Repository Structure
 ```
 📁 web-programming-1/
 ├── 📄 README.md (this file)
+├── 📄 CODESPACES_SETUP.md (Codespaces guide)
+├── 📄 evolution-example.html (Interactive HTML/CSS/JS demo)
+├── 📁 .devcontainer/ (Codespaces configuration)
 └── 📁 lessons/
     ├── 📁 lesson-01-internet-web-fundamentals/
     ├── 📁 lesson-02-html-structure/
@@ -83,18 +100,33 @@ This repository contains **12 comprehensive lessons** progressing from fundament
 
 ## Development Environment Setup
 
-### Recommended Tools
+### Option 1: GitHub Codespaces (Recommended - No Installation)
+Simply create a codespace from this repository and start coding immediately! See the [Quick Start](#-quick-start-with-github-codespaces) section above.
+
+### Option 2: Local Development
+#### Recommended Tools
 - **Code Editor**: Visual Studio Code (with Live Server extension)
 - **Browser**: Chrome or Firefox (latest version)
 - **Version Control**: Git
+- **Optional**: Python 3.x or Node.js for local server
 
-### Getting Started
+#### Getting Started Locally
 1. Clone this repository:
    ```bash
    git clone https://github.com/your-username/web-programming-1.git
    ```
-2. Navigate to any lesson folder
-3. Open the HTML files in your browser or use Live Server
+2. Navigate to the repository:
+   ```bash
+   cd web-programming-1
+   ```
+3. **View the Evolution Example:**
+   - Open `evolution-example.html` directly in your browser, or
+   - Use VS Code with Live Server extension for auto-reload
+   
+4. **Start with lessons:**
+   ```bash
+   cd lessons/lesson-01-internet-web-fundamentals
+   ```
 
 ## Assessment Methodology
 - **Practical Exercises**: 40%
